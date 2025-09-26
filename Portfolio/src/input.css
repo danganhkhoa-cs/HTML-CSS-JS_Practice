@@ -1,5 +1,21 @@
 @layer theme, base, components, utilities;
-
+@import "tailwindcss";
 @import "tailwindcss/theme.css" layer(theme);
 @import "tailwindcss/preflight.css" layer(base);
 @import "tailwindcss/utilities.css" layer(utilities);
+
+@layer utilities {
+    .text-primary {
+        @apply text-[#fefefe];
+    }
+
+    .text-gradient {
+        @apply bg-gradient-to-r from-[#8eccff] from-40% to-[#7065ff] bg-clip-text text-transparent;
+    }
+}
+
+@layer components {
+    .button {
+        @apply bg-gradient-to-r from-blue-400 via-[#7065ff] to-[#4a3ef7] rounded-lg cursor-pointer transition duration-300 ease-in-out hover:-translate-y-[3px] hover:opacity-90
+    }
+}
