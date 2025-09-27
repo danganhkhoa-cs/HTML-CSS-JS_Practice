@@ -8,14 +8,22 @@
     .text-primary {
         @apply text-[#fefefe];
     }
-
-    .text-gradient {
-        @apply bg-gradient-to-r from-[#8eccff] from-40% to-[#7065ff] bg-clip-text text-transparent;
-    }
 }
 
 @layer components {
+    .text-gradient {
+        @apply bg-gradient-to-r from-[#8eccff] from-40% to-[#7065ff] bg-clip-text text-transparent;
+    }
+
     .button {
-        @apply bg-gradient-to-r from-blue-400 via-[#7065ff] to-[#4a3ef7] rounded-lg cursor-pointer transition duration-300 ease-in-out hover:-translate-y-[3px] hover:opacity-90
+        @apply relative bg-gradient-to-r from-blue-400 via-[#7065ff] to-[#4a3ef7] rounded-lg cursor-pointer transition duration-300 ease-in-out hover:-translate-y-[3px] hover:opacity-90
+    }
+
+    .main-bg {
+        @apply relative bg-[url('background.jpg')] bg-cover bg-center
+    }
+
+    .blur-layer {
+        @apply absolute inset-0 bg-[linear-gradient(to_bottom,_#000012_0%,_#000012_2%,_transparent_20%,_transparent_80%,_#000012_95%,_#000012_100%)]
     }
 }
