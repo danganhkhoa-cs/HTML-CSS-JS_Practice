@@ -15,7 +15,7 @@
         @apply flex flex-col justify-center items-center;
     }
     .p-responsive {
-        @apply grid grid-cols-[minmax(1.2rem,1fr)_minmax(min-content,75rem)_minmax(1.2rem,1fr)];
+        @apply grid grid-cols-[minmax(1.3rem,1fr)_minmax(min-content,75rem)_minmax(1.3rem,1fr)];
     }
     .p-button-large {
         @apply pt-[clamp(12px,3vw,16px)] pb-[clamp(12px,3vw,16px)] pl-[clamp(40px,14vw,75px)] pr-[clamp(40px,14vw,75px)];
@@ -30,7 +30,7 @@
         @apply relative bg-gradient-to-r from-blue-400 via-[#7065ff] to-[#4a3ef7] rounded-md cursor-pointer transition duration-300 ease-in-out hover:-translate-y-[3px] hover:opacity-90
     }
     .skill-tag {
-        @apply relative w-fit bg-[#10183A] rounded-md pt-2 pb-2 pl-5 pr-5 border-gray-700 font-bold text-[14px]
+        @apply relative w-fit bg-[#10183A] rounded-md pt-2 pb-2 pl-5 pr-5 border-gray-700 font-bold text-[clamp(16px,2vw,20px)]
     }
     .main-bg {
         @apply relative bg-[url('background.jpg')] bg-cover bg-center
@@ -43,5 +43,17 @@
     }
     .bg-odd-section {
         @apply relative  before:left-[calc(50%-50vw)];
+    }
+    .project-img {
+        @apply w-full md:m-0 md:justify-self-end m-auto rounded-md aspect-video object-cover;
+    }
+    .project-name {
+        @apply font-bold text-center md:text-left md:w-fit text-2xl mt-6 md:mt-0 mb-2 group-hover:text-[#8eccff];
+    }
+    .project-description {
+        @apply text-center md:text-left m-auto md:m-0 max-w-2xl;
+    }
+    .project-container {
+        @apply p-6 mb-4 md:mb-0 md:grid md:grid-cols-2 md:items-center md:gap-10 md:max-w-[900px] md:m-auto hover:bg-white/10 backdrop-blur-lg hover:rounded-[24px];
     }
 }
