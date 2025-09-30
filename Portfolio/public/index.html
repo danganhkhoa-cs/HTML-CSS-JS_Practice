@@ -30,7 +30,9 @@
         class="col-span-full flex-col-center gap-8 w-full h-[30rem] sm:h-[100vh] main-bg"
       >
         <div class="blur-layer"></div>
-        <h1 class="text-gradient-bold text-[clamp(30px,6vw,50px)] text-center">
+        <h1
+          class="text-gradient-bold text-[clamp(30px,7vw,70px)] text-center tracking-wide"
+        >
           HI!, I'M DANG ANH KHOA
         </h1>
         <p class="text-[#c7d3fc] text-center m-4 text-[clamp(1rem,2vw,1.2rem)]">
@@ -42,10 +44,12 @@
         </div>
       </section>
       <!-- ABOUT ME -->
-      <section class="col-[2/3] md:grid md:grid-cols-2 md:gap-10 pb-28">
+      <section
+        class="col-[2/3] md:grid md:grid-cols-2 md:gap-14 pb-24 md:h-[80vh]"
+      >
         <div class="md:col-[1/3] flex-col-center gap-2">
           <h2
-            class="text-gradient-bold text-center text-[clamp(27px,5vw,45px)]"
+            class="text-gradient-bold text-center text-[clamp(27px,6vw,45px)] tracking-wider"
           >
             ABOUT ME
           </h2>
@@ -53,10 +57,10 @@
         </div>
         <!-- Introduction -->
         <div name="introduction">
-          <h3 class="font-bold text-[clamp(20px,3vw,25px)] mt-2">
+          <h3 class="font-bold text-[clamp(20px,4vw,30px)] mt-2">
             Introduction
           </h3>
-          <p class="text-justify mt-3">
+          <p class="text-justify mt-3 text-[clamp(16px,2vw,20px)]/7">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -71,10 +75,10 @@
         </div>
         <!-- Skills -->
         <div name="skills">
-          <h3 class="font-bold text-[clamp(20px,3vw,25px)] mt-10 md:mt-2">
+          <h3 class="font-bold text-[clamp(20px,4vw,30px)] mt-10 md:mt-2">
             Skills
           </h3>
-          <div class="flex flex-wrap gap-2 w-full max-w-3xl mt-4">
+          <div class="flex flex-wrap gap-3 w-full max-w-3xl mt-4">
             <div class="skill-tag">HTML</div>
             <div class="skill-tag">CSS</div>
             <div class="skill-tag">JavaScript</div>
@@ -94,16 +98,131 @@
         class="col-span-full h-[1px] w-[50vw] bg-gradient-to-r m-auto from-transparent via-blue-200 to-transparent"
       ></div>
       <!--PROJECTS-->
-      <section class="col-[2/3] pt-14 pb-32">
+      <section class="col-[2/3] pt-10 md:pt-28">
         <div class="flex-col-center gap-2">
           <h2
-            class="text-gradient-bold text-center text-[clamp(27px,5vw,45px)]"
+            class="text-gradient-bold text-center text-[clamp(27px,6vw,45px)] tracking-wider"
           >
-            PROJECT
+            PROJECTS
           </h2>
           <div class="heading-after"></div>
         </div>
-        <div class="flex flex-col"></div>
+        <div class="grid grid-cols-1 mt-5">
+          <a href="https://github.com/danganhkhoa-cs" target="_blank"
+            ><div class="project-container group">
+              <img class="project-img" src="placeholder.jpg" />
+              <div>
+                <h3 class="project-name">
+                  Project 1<span class="inline-block"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      class="size-5 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                </h3>
+                <p class="project-description">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+              </div>
+            </div></a
+          >
+          <a href="https://github.com/danganhkhoa-cs" target="_blank"
+            ><div class="project-container group">
+              <img class="project-img" src="placeholder.jpg" />
+              <div>
+                <h3 class="project-name">
+                  Project 2<span class="inline-block"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      class="size-5 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                </h3>
+                <p class="project-description">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+              </div>
+            </div></a
+          ><a href="https://github.com/danganhkhoa-cs" target="_blank"
+            ><div class="project-container group">
+              <img class="project-img" src="placeholder.jpg" />
+              <div>
+                <h3 class="project-name">
+                  Project 3<span class="inline-block"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      class="size-5 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                </h3>
+                <p class="project-description">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+              </div>
+            </div></a
+          ><a href="https://github.com/danganhkhoa-cs" target="_blank"
+            ><div class="project-container group">
+              <img class="project-img" src="placeholder.jpg" />
+              <div>
+                <h3 class="project-name">
+                  Project 4<span class="inline-block"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      class="size-5 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                </h3>
+                <p class="project-description">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+              </div>
+            </div></a
+          >
+        </div>
       </section>
       <div
         class="col-[2/3] h-[2000px] w-[20px] bg-linear-to-b from-cyan-100 to-blue-950"
