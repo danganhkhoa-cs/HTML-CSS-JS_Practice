@@ -29,6 +29,9 @@
     .button {
         @apply relative bg-gradient-to-r from-blue-400 via-[#7065ff] to-[#4a3ef7] rounded-md cursor-pointer transition duration-300 ease-in-out hover:-translate-y-[3px] hover:opacity-90
     }
+    .nav-link {
+        @apply hover:bg-gradient-to-r hover:from-blue-400/90 hover:via-[#7065ff]/90 hover:to-[#4a3ef7]/90 text-[0.9rem] lg:text-[1rem] font-bold py-1 px-6 rounded-md
+    }
     .skill-tag {
         @apply relative w-fit bg-[#10183A] rounded-md pt-2 pb-2 pl-5 pr-5 border-gray-700 font-bold text-[clamp(16px,2vw,20px)]
     }

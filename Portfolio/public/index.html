@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="text-primary font-display">
+<html lang="en" class="text-primary font-display scroll-smooth scroll-pt-20">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,18 +15,30 @@
 
   <body class="bg-[#000212]">
     <header>
-      <div class="fixed top-0 z-50 bg-white/5 backdrop-blur-lg w-full h-20">
-        <div id="general-info" class="flex h-full items-center">
+      <div class="fixed top-0 z-50 bg-white/5 backdrop-blur-md w-full h-20">
+        <!--Avatar and navbar-->
+        <div id="general-info" class="relative flex h-full items-center w-full">
           <div
-            class="inline-block bg-white w-12 h-12 ml-4 mr-4 rounded-full"
+            class="inline-block bg-white w-12 h-12 ml-4 md:ml-10 mr-4 rounded-full"
           ></div>
-          <p class="inline-block font-bold text-[15px]">ĐẶNG ANH KHOA</p>
+          <p class="inline-block font-bold text-[15px] md:text-[18px]">
+            ĐẶNG ANH KHOA
+          </p>
+          <nav
+            class="hidden sm:grid grid-flow-col items-center md:gap-5 ml-auto mr-4 md:mr-6"
+          >
+            <a href="./#hero" class="nav-link">HOME</a>
+            <a href="./#about-me" class="nav-link">ABOUT</a>
+            <a href="./#projects" class="nav-link">PROJECTS</a>
+            <a href="./#contact" class="nav-link">CONTACT</a>
+          </nav>
         </div>
       </div>
     </header>
     <main class="mt-20 p-responsive">
       <!-- Hero section -->
       <section
+        id="hero"
         class="col-span-full flex-col-center gap-8 w-full h-[30rem] min-h-fit sm:h-[100dvh] main-bg"
       >
         <div class="blur-layer"></div>
@@ -39,14 +51,19 @@
           I'm currently an undergratuate student at University Of Information
           Technology - VNU
         </p>
-        <div class="button p-button-large">
-          <a class="text-[clamp(1.2rem,2vw,1.4rem)] font-bold">PROJECTS</a>
-        </div>
+        <a href="./#projects"
+          ><div
+            class="button p-button-large text-[clamp(1.2rem,2vw,1.4rem)] font-bold"
+          >
+            PROJECTS
+          </div></a
+        >
         <div class="sm:h-20"></div>
       </section>
       <!-- ABOUT ME -->
       <section
-        class="col-[2/3] md:grid md:grid-cols-2 md:gap-14 pb-24 md:h-[80dvh] min-h-fit"
+        id="about-me"
+        class="col-[2/3] md:grid md:grid-cols-2 md:gap-14 pb-24 md:h-[90dvh] min-h-fit"
       >
         <div class="md:col-[1/3] flex-col-center gap-2">
           <h2
@@ -70,9 +87,13 @@
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum.
           </p>
-          <div class="button p-button w-fit mt-6">
-            <a class="text-[clamp(1rem,1.5vw,1.1rem)] font-bold">CONTACT</a>
-          </div>
+          <a href="./#contact"
+            ><div
+              class="button p-button w-fit mt-6 text-[clamp(1rem,1.5vw,1.1rem)] font-bold"
+            >
+              CONTACT
+            </div></a
+          >
         </div>
         <!-- Skills -->
         <div name="skills">
@@ -99,7 +120,7 @@
         class="col-span-full h-[1px] w-[50vw] bg-gradient-to-r m-auto from-transparent via-blue-200 to-transparent"
       ></div>
       <!--PROJECTS-->
-      <section class="col-[2/3] pt-10 md:pt-28">
+      <section id="projects" class="col-[2/3] pt-10 md:pt-28">
         <div class="flex-col-center gap-2">
           <h2
             class="text-gradient-bold text-center text-[clamp(27px,6vw,45px)] tracking-wider"
