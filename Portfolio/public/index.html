@@ -41,7 +41,7 @@
         id="hero"
         class="col-span-full flex-col-center gap-8 w-full h-[30rem] min-h-fit sm:h-[100dvh] hero-bg"
       >
-        <div class="blur-layer"></div>
+        <div class="hero-blur-layer"></div>
         <h1
           class="text-gradient-bold text-[clamp(30px,7vw,70px)] text-center tracking-wide"
         >
@@ -142,7 +142,7 @@
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 20 20"
                       fill="currentColor"
-                      class="size-5 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                      class="project-svg"
                     >
                       <path
                         fill-rule="evenodd"
@@ -171,7 +171,7 @@
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 20 20"
                       fill="currentColor"
-                      class="size-5 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                      class="project-svg"
                     >
                       <path
                         fill-rule="evenodd"
@@ -199,7 +199,7 @@
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 20 20"
                       fill="currentColor"
-                      class="size-5 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                      class="project-svg"
                     >
                       <path
                         fill-rule="evenodd"
@@ -227,7 +227,7 @@
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 20 20"
                       fill="currentColor"
-                      class="size-5 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                      class="project-svg"
                     >
                       <path
                         fill-rule="evenodd"
@@ -249,8 +249,9 @@
         </div>
       </section>
       <!--CONTACT-->
-      <section id="contact" class="col-span-full h-screen">
-        <div class="flex-col-center gap-2 mt-20">
+      <section id="contact" class="col-span-full h-fit contact-bg">
+        <div class="contact-blur-layer"></div>
+        <div class="flex-col-center gap-2 mt-32">
           <h2
             class="text-gradient-bold text-center text-[clamp(27px,6vw,45px)] tracking-wider"
           >
@@ -258,13 +259,58 @@
           </h2>
           <div class="heading-after"></div>
         </div>
+        <div class="glow-box w-[90vw] max-w-[900px] m-auto">
+          <form
+            action="https://github.com/danganhkhoa-cs"
+            class="border-gradient w-full mt-10 p-8 font-bold mb-32"
+          >
+            <div class="input-container">
+              <label for="name" class="input-label">Name</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                class="input-field"
+                placeholder="Enter your name"
+                required
+              />
+            </div>
+            <div class="input-container">
+              <label for="email" class="input-label">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                class="input-field"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+            <div class="input-container">
+              <label for="message" class="input-label" 2>Message</label>
+              <textarea
+                id="message"
+                name="message"
+                type="text"
+                rows="3"
+                class="input-field"
+                placeholder="Enter your message"
+                required
+              ></textarea>
+            </div>
+            <div class="button p-button w-full mt-5 sm:w-fit sm:ml-auto">
+              <input
+                type="submit"
+                value="SUBMIT"
+                class="w-full p-0 m-0 cursor-pointer"
+              />
+            </div>
+          </form>
+        </div>
       </section>
-      <div class="w-screen h-80 bg-[#ebebff]"></div>
-
-      <div
-        class="col-[2/3] h-[2000px] w-[20px] bg-linear-to-b from-cyan-100 to-blue-950"
-      ></div>
     </main>
-    <footer></footer>
+    <footer>
+      <div class="h-0 bg-black"></div>
+    </footer>
   </body>
 </html>

@@ -1,65 +1,93 @@
 @import "tailwindcss";
 
 @theme {
-    --font-display: "Roboto", sans-serif;
+  --font-display: "Roboto", sans-serif;
 }
 
 @layer utilities {
-    .text-primary {
-        @apply text-[#f9fafb];
-    }
-    .text-gradient-bold {
-        @apply bg-gradient-to-r from-[#8eccff] from-40% to-[#7065ff] bg-clip-text text-transparent font-bold;
-    }
-    .flex-col-center {
-        @apply flex flex-col justify-center items-center;
-    }
-    .p-responsive {
-        @apply grid grid-cols-[minmax(1.3rem,1fr)_minmax(min-content,75rem)_minmax(1.3rem,1fr)];
-    }
-    .p-button-large {
-        @apply pt-[clamp(12px,3vw,16px)] pb-[clamp(12px,3vw,16px)] pl-[clamp(40px,14vw,75px)] pr-[clamp(40px,14vw,75px)];
-    }
-    .p-button {
-        @apply pt-[clamp(10px,2vw,12px)] pb-[clamp(10px,2vw,12px)] pl-[clamp(40px,10vw,60px)] pr-[clamp(40px,10vw,60px)];
-    }
+  .text-primary {
+    @apply text-[#efefef];
+  }
+  .text-gradient-bold {
+    @apply bg-gradient-to-r from-[#8eccff] from-40% to-[#7065ff] bg-clip-text text-transparent font-bold;
+  }
+  .flex-col-center {
+    @apply flex flex-col justify-center items-center;
+  }
+  .p-responsive {
+    @apply grid grid-cols-[minmax(1.3rem,1fr)_minmax(min-content,75rem)_minmax(1.3rem,1fr)];
+  }
+  .p-button-large {
+    @apply pt-[clamp(12px,3vw,16px)] pb-[clamp(12px,3vw,16px)] pl-[clamp(40px,14vw,75px)] pr-[clamp(40px,14vw,75px)];
+  }
+  .p-button {
+    @apply pt-[clamp(10px,2vw,12px)] pb-[clamp(10px,2vw,12px)] pl-[clamp(40px,10vw,60px)] pr-[clamp(40px,10vw,60px)];
+  }
+  .border-gradient {
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+    background: linear-gradient(#0e1028,#0e1028) padding-box,
+                linear-gradient(90deg,#51a2ff 0%,#7065ff 50%,#4a3ef7 100%) border-box
+  }
 }
 
 @layer components {
-    .divider {
-        @apply col-span-full h-[1px] md:h-[2px] w-[50vw] bg-gradient-to-r m-auto from-transparent via-blue-200 to-transparent;
-    }
-    .button {
-        @apply relative bg-gradient-to-r from-blue-400 via-[#7065ff] to-[#4a3ef7] rounded-md cursor-pointer transition duration-300 ease-in-out hover:-translate-y-[3px] hover:opacity-90
-    }
-    .nav-link {
-        @apply hover:bg-gradient-to-r hover:from-blue-400/90 hover:via-[#7065ff]/90 hover:to-[#4a3ef7]/90 text-[0.8rem] md:text-[0.9rem] lg:text-[1rem] font-bold py-1 px-4 md:px-6 rounded-md
-    }
-    .skill-tag {
-        @apply relative w-fit bg-[#10183a] rounded-md pt-2 pb-2 pl-5 pr-5 border-gray-700 font-bold text-[clamp(16px,2vw,20px)]
-    }
-    .hero-bg {
-        @apply relative bg-[url('background.webp')] bg-cover bg-center
-    }
-    .contact-bg {
-        @apply relative bg-[url('mainbg.jpg')] bg-cover bg-center
-    }
-    .blur-layer {
-        @apply absolute inset-0 bg-[linear-gradient(to_bottom,_#000012_0%,_#000012_1%,_transparent_10%,_transparent_80%,_#000012_95%,_#000012_100%)]
-    }
-    .heading-after {
-        @apply w-6 h-1 rounded-md bg-[#c7d3fc]
-    }
-    .project-img {
-        @apply w-full md:m-0 md:justify-self-end m-auto rounded-md aspect-video object-cover;
-    }
-    .project-name {
-        @apply font-bold text-center md:text-left md:w-fit text-2xl xl:text-3xl mt-6 md:mt-0 mb-2 group-hover:text-[#8eccff];
-    }
-    .project-description {
-        @apply text-center md:text-left xl:text-lg m-auto md:m-0 max-w-2xl;
-    }
-    .project-container {
-        @apply p-6 mb-4 md:mb-0 md:grid md:grid-cols-2 md:items-center md:gap-10 md:max-w-[900px] xl:max-w-[1000px] md:m-auto bg-transparent hover:bg-white/10 backdrop-blur-lg hover:rounded-[24px];
-    }
+  .divider {
+    @apply col-span-full h-[1px] md:h-[2px] w-[50vw] bg-gradient-to-r m-auto from-transparent via-blue-200 to-transparent;
+  }
+  .button {
+    @apply relative bg-gradient-to-r from-blue-400 via-[#7065ff] to-[#4a3ef7] rounded-md cursor-pointer transition duration-300 ease-in-out hover:-translate-y-[3px] hover:opacity-90;
+  }
+  .nav-link {
+    @apply relative bg-transparent text-[0.8rem] md:text-[0.9rem] lg:text-[1rem] font-bold py-1 px-4 md:px-6 rounded-md overflow-hidden;
+  }
+  .nav-link::before {
+    content: "";
+    @apply absolute inset-0 -z-10 bg-gradient-to-r from-blue-400/90 via-[#7065ff]/90 to-[#4a3ef7]/90 opacity-0 transition duration-200 ease-in-out;
+  }
+  .nav-link:hover::before {
+    @apply opacity-100;
+  }
+  .skill-tag {
+    @apply relative w-fit bg-[#10183a] rounded-md pt-2 pb-2 pl-5 pr-5 border-gray-700 font-bold text-[clamp(16px,2vw,20px)];
+  }
+  .hero-bg {
+    @apply relative bg-[url('hero-background.webp')] bg-cover bg-center;
+  }
+  .contact-bg {
+    @apply relative bg-[url('contact-background.webp')] bg-cover bg-center z-0;
+  }
+  .hero-blur-layer {
+    @apply absolute inset-0 bg-[linear-gradient(to_bottom,_#000212_0%,_#000212_1%,_transparent_10%,_transparent_80%,_#000212_95%,_#000212_100%)];
+  }
+  .contact-blur-layer {
+    @apply absolute inset-0 bg-[linear-gradient(to_bottom,_#000212_0%,_#000212_5%,_transparent_20%,_transparent_90%,_#000000_98%,_#000000_100%)] z-0;
+  }
+  .heading-after {
+    @apply w-6 h-1 rounded-md bg-[#c7d3fc];
+  }
+  .project-img {
+    @apply w-full md:m-0 md:justify-self-end m-auto rounded-md aspect-video object-cover;
+  }
+  .project-name {
+    @apply font-bold text-center md:text-left md:w-fit text-2xl xl:text-3xl mt-6 md:mt-0 mb-2 transition duration-200 ease-in-out group-hover:text-[#8eccff];
+  }
+  .project-svg {
+    @apply size-5 transition duration-200 ease-in-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5;
+  }
+  .project-description {
+    @apply text-center md:text-left xl:text-lg m-auto md:m-0 max-w-2xl;
+  }
+  .project-container {
+    @apply p-6 mb-4 md:mb-0 md:grid md:grid-cols-2 md:items-center md:gap-10 md:max-w-[900px] xl:max-w-[1000px] md:m-auto  bg-transparent transition duration-200 ease-in-out hover:bg-white/10 rounded-[24px];
+  }
+  .input-container {
+    @apply pb-6;
+  }
+  .input-field {
+    @apply block w-full p-4 bg-[#000212] rounded-lg mt-2 text-[0.9rem] focus:outline-0 focus:border-0;
+  }
+  .glow-box {
+    @apply relative before:absolute before:-inset-2 before:rounded-lg before:bg-gradient-to-r before:from-blue-400 before:via-[#7065ff] before:to-[#4a3ef7] before:blur-md before:-z-1;
+  }
 }
