@@ -11,6 +11,13 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
 
   <body class="bg-[#000212]">
@@ -19,7 +26,7 @@
         <!--Avatar and navbar-->
         <div id="general-info" class="relative flex h-full items-center w-full">
           <div
-            class="inline-block bg-white w-12 h-12 ml-4 md:ml-10 mr-4 rounded-full"
+            class="inline-block bg-[url('avatar.jpg')] bg-cover bg-center w-12 h-12 ml-4 md:ml-10 mr-4 rounded-full"
           ></div>
           <p class="inline-block font-bold text-[15px] md:text-[18px]">
             DANG ANH KHOA
@@ -35,7 +42,7 @@
         </div>
       </div>
     </header>
-    <main class="mt-20 p-responsive">
+    <main class="relative overflow-hidden mt-20 p-responsive">
       <!-- Hero section -->
       <section
         id="hero"
@@ -310,7 +317,23 @@
       </section>
     </main>
     <footer>
-      <div class="h-0 bg-black"></div>
+      <div
+        class="flex flex-col items-center justify-start h-36 md:h-48 md:pt-6"
+      >
+        <div class="flex-row-center gap-4 md:gap-8">
+          <i class="social-icon fa-regular fa-envelope"></i>
+          <i class="social-icon fa-brands fa-square-facebook"></i>
+          <i class="social-icon fa-brands fa-github"></i>
+          <i class="social-icon fa-brands fa-linkedin-in"></i>
+        </div>
+        <p
+          class="font-bold text-center text-[0.8rem] md:text-[1rem] pt-10 md:pt-12"
+        >
+          <span
+            ><i class="fa-regular fa-copyright"></i> Dang Anh Khoa 2025</span
+          >
+        </p>
+      </div>
     </footer>
   </body>
 </html>
