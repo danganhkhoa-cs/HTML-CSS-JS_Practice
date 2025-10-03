@@ -94,6 +94,6 @@
     @apply relative before:absolute before:-inset-2 before:rounded-lg before:bg-gradient-to-r before:from-blue-400 before:via-[#7065ff] before:to-[#4a3ef7] before:blur-md before:-z-1;
   }
   .social-icon {
-    @apply text-3xl md:text-4xl
+    @apply text-3xl md:text-4xl transition duration-200 ease-in-out hover:-translate-y-1 hover:scale-110 bg-gradient-to-br from-[#8eccff] from-40% to-[#7065ff] bg-clip-text text-transparent font-bold
   }
 }
