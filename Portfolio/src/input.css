@@ -14,6 +14,9 @@
   .flex-col-center {
     @apply flex flex-col justify-center items-center;
   }
+  .flex-row-center {
+    @apply flex justify-center items-center;
+  }
   .p-responsive {
     @apply grid grid-cols-[minmax(1.3rem,1fr)_minmax(min-content,75rem)_minmax(1.3rem,1fr)];
   }
@@ -61,7 +64,7 @@
     @apply absolute inset-0 bg-[linear-gradient(to_bottom,_#000212_0%,_#000212_1%,_transparent_10%,_transparent_80%,_#000212_95%,_#000212_100%)];
   }
   .contact-blur-layer {
-    @apply absolute inset-0 bg-[linear-gradient(to_bottom,_#000212_0%,_#000212_5%,_transparent_20%,_transparent_90%,_#000000_98%,_#000000_100%)] z-0;
+    @apply absolute inset-0 bg-[linear-gradient(to_bottom,_#000212_0%,_#000212_5%,_transparent_20%,_transparent_90%,_#000212_98%,_#000212_100%)] z-0;
   }
   .heading-after {
     @apply w-6 h-1 rounded-md bg-[#c7d3fc];
@@ -89,5 +92,8 @@
   }
   .glow-box {
     @apply relative before:absolute before:-inset-2 before:rounded-lg before:bg-gradient-to-r before:from-blue-400 before:via-[#7065ff] before:to-[#4a3ef7] before:blur-md before:-z-1;
+  }
+  .social-icon {
+    @apply text-3xl md:text-4xl
   }
 }
