@@ -32,6 +32,12 @@
     background: linear-gradient(#0e1028,#0e1028) padding-box,
                 linear-gradient(90deg,#51a2ff 0%,#7065ff 50%,#4a3ef7 100%) border-box
   }
+  .border-gradient:focus-within {
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+    background: linear-gradient(#0e1028,#0e1028) padding-box,
+                linear-gradient(90deg,#bedbff 0%,#bedbff 50%,#bedbff 100%) border-box
+  }
 }
 
 @layer components {
@@ -39,7 +45,7 @@
     @apply col-span-full h-[1px] md:h-[2px] w-[50vw] bg-gradient-to-r m-auto from-transparent via-blue-200 to-transparent;
   }
   .button {
-    @apply relative bg-gradient-to-r from-blue-400 via-[#7065ff] to-[#4a3ef7] rounded-md cursor-pointer transition duration-300 ease-in-out hover:-translate-y-[3px] hover:opacity-90;
+    @apply relative bg-gradient-to-r from-blue-400 via-[#7065ff] to-[#4a3ef7] rounded-md cursor-pointer transition duration-300 ease-in-out hover:scale-105;
   }
   .nav-link {
     @apply relative bg-transparent text-[0.8rem] md:text-[0.9rem] lg:text-[1rem] font-bold py-1 px-4 md:px-6 rounded-md overflow-hidden;
@@ -52,7 +58,7 @@
     @apply opacity-100;
   }
   .skill-tag {
-    @apply relative w-fit bg-[#10183a] rounded-md pt-2 pb-2 pl-5 pr-5 border-gray-700 font-bold text-[clamp(16px,2vw,20px)];
+    @apply relative w-fit bg-[#10183a] rounded-md pt-2 pb-2 pl-5 pr-5 border-gray-700 font-bold text-[clamp(16px,2vw,20px)] cursor-default transition duration-200 ease-in-out hover:-translate-y-1 hover:scale-110;
   }
   .hero-bg {
     @apply relative bg-[url('hero-background.webp')] bg-cover bg-center;
@@ -73,16 +79,16 @@
     @apply w-full md:m-0 md:justify-self-end m-auto rounded-md aspect-video object-cover;
   }
   .project-name {
-    @apply font-bold text-center md:text-left md:w-fit text-2xl xl:text-3xl mt-6 md:mt-0 mb-2 transition duration-200 ease-in-out group-hover:text-[#8eccff] group-active:text-[#8eccff];
+    @apply font-bold text-center md:text-left md:w-fit text-2xl xl:text-3xl mt-6 md:mt-0 mb-2 transition duration-200 ease-in-out group-hover/project:text-[#8eccff];
   }
   .project-svg {
-    @apply size-5 transition duration-200 ease-in-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-active:-translate-y-0.5 group-active:translate-x-0.5;
+    @apply size-5 transition duration-200 ease-in-out group-hover/project:-translate-y-0.5 group-hover/project:translate-x-0.5;
   }
   .project-description {
     @apply text-center md:text-left xl:text-lg m-auto md:m-0 max-w-2xl;
   }
   .project-container {
-    @apply p-6 mb-4 md:mb-0 md:grid md:grid-cols-2 md:items-center md:gap-10 md:max-w-[900px] xl:max-w-[1000px] md:m-auto  bg-transparent transition duration-200 ease-in-out hover:bg-white/10 active:bg-white/102 rounded-[24px];
+    @apply group-hover/all:opacity-40 hover:!opacity-100 p-6 mb-4 md:mb-0 md:grid md:grid-cols-2 md:items-center md:gap-10 md:max-w-[900px] xl:max-w-[1000px] bg-transparent transition duration-200 ease-in-out hover:bg-white/10 rounded-[24px];
   }
   .input-container {
     @apply pb-6;
@@ -91,9 +97,12 @@
     @apply block w-full p-4 bg-[#000212] rounded-lg mt-2 text-[0.9rem] focus:outline-0 focus:border-0;
   }
   .glow-box {
-    @apply relative before:absolute before:-inset-2 before:rounded-lg before:bg-gradient-to-r before:from-blue-400 before:via-[#7065ff] before:to-[#4a3ef7] before:blur-md before:-z-1;
+    @apply relative before:transition before:duration-300 before:ease-in-out before:absolute before:-inset-2 before:rounded-lg before:bg-gradient-to-r before:from-blue-400 before:via-[#7065ff] before:to-[#4a3ef7] before:blur-md before:-z-1;
+  }
+  .glow-box:focus-within::before {
+    @apply bg-gradient-to-r from-blue-200 via-blue-200 to-blue-200;
   }
   .social-icon {
-    @apply text-3xl md:text-4xl transition duration-200 ease-in-out hover:-translate-y-1 hover:scale-110 active:-translate-y-1 active:scale-110 bg-gradient-to-br from-[#8eccff] from-40% to-[#7065ff] bg-clip-text text-transparent font-bold
+    @apply text-3xl md:text-4xl bg-clip-text text-transparent font-bold bg-gradient-to-br from-[#efefef] to-[#efefef] transition duration-200 ease-in-out hover:-translate-y-2 hover:scale-125 hover:from-[#8eccff] hover:from-40% hover:to-[#7065ff]
   }
 }
