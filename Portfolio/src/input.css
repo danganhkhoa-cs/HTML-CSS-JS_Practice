@@ -73,16 +73,16 @@
     @apply w-full md:m-0 md:justify-self-end m-auto rounded-md aspect-video object-cover;
   }
   .project-name {
-    @apply font-bold text-center md:text-left md:w-fit text-2xl xl:text-3xl mt-6 md:mt-0 mb-2 transition duration-200 ease-in-out group-hover:text-[#8eccff];
+    @apply font-bold text-center md:text-left md:w-fit text-2xl xl:text-3xl mt-6 md:mt-0 mb-2 transition duration-200 ease-in-out group-hover:text-[#8eccff] group-active:text-[#8eccff];
   }
   .project-svg {
-    @apply size-5 transition duration-200 ease-in-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5;
+    @apply size-5 transition duration-200 ease-in-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-active:-translate-y-0.5 group-active:translate-x-0.5;
   }
   .project-description {
     @apply text-center md:text-left xl:text-lg m-auto md:m-0 max-w-2xl;
   }
   .project-container {
-    @apply p-6 mb-4 md:mb-0 md:grid md:grid-cols-2 md:items-center md:gap-10 md:max-w-[900px] xl:max-w-[1000px] md:m-auto  bg-transparent transition duration-200 ease-in-out hover:bg-white/10 rounded-[24px];
+    @apply p-6 mb-4 md:mb-0 md:grid md:grid-cols-2 md:items-center md:gap-10 md:max-w-[900px] xl:max-w-[1000px] md:m-auto  bg-transparent transition duration-200 ease-in-out hover:bg-white/10 active:bg-white/102 rounded-[24px];
   }
   .input-container {
     @apply pb-6;
@@ -94,6 +94,6 @@
     @apply relative before:absolute before:-inset-2 before:rounded-lg before:bg-gradient-to-r before:from-blue-400 before:via-[#7065ff] before:to-[#4a3ef7] before:blur-md before:-z-1;
   }
   .social-icon {
-    @apply text-3xl md:text-4xl transition duration-200 ease-in-out hover:-translate-y-1 hover:scale-110 bg-gradient-to-br from-[#8eccff] from-40% to-[#7065ff] bg-clip-text text-transparent font-bold
+    @apply text-3xl md:text-4xl transition duration-200 ease-in-out hover:-translate-y-1 hover:scale-110 active:-translate-y-1 active:scale-110 bg-gradient-to-br from-[#8eccff] from-40% to-[#7065ff] bg-clip-text text-transparent font-bold
   }
 }
