@@ -631,6 +631,7 @@
     transition-duration: 200ms;
     --tw-ease: var(--ease-in-out);
     transition-timing-function: var(--ease-in-out);
+    will-change: transform;
     &:hover {
       @media (hover: hover) {
         --tw-scale-x: 105%;
@@ -779,6 +780,7 @@
     transition-duration: 200ms;
     --tw-ease: var(--ease-in-out);
     transition-timing-function: var(--ease-in-out);
+    will-change: color;
     &:is(:where(.group\/project):hover *) {
       @media (hover: hover) {
         color: #8eccff;
@@ -808,6 +810,7 @@
     transition-duration: 200ms;
     --tw-ease: var(--ease-in-out);
     transition-timing-function: var(--ease-in-out);
+    will-change: transform;
     &:is(:where(.group\/project):hover *) {
       @media (hover: hover) {
         --tw-translate-x: calc(var(--spacing) * 0.5);
@@ -848,6 +851,7 @@
     transition-duration: 200ms;
     --tw-ease: var(--ease-in-out);
     transition-timing-function: var(--ease-in-out);
+    will-change: background-color;
     &:is(:where(.group\/all):hover *) {
       @media (hover: hover) {
         opacity: 40%;
@@ -1015,6 +1019,7 @@
     transition-duration: 200ms;
     --tw-ease: var(--ease-in-out);
     transition-timing-function: var(--ease-in-out);
+    will-change: background-image;
     &:hover {
       @media (hover: hover) {
         --tw-translate-y: calc(var(--spacing) * -2);
@@ -1060,13 +1065,7 @@
         scale: var(--tw-scale-x) var(--tw-scale-y);
       }
       &:active {
-        transition-property: transform, translate, scale, rotate;
-        transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-        transition-duration: var(--tw-duration, var(--default-transition-duration));
-      }
-      &:active {
-        --tw-duration: 75ms;
-        transition-duration: 75ms;
+        transition-property: none;
       }
     }
     .project-name {
@@ -1074,13 +1073,7 @@
         color: #8eccff;
       }
       &:is(:where(.group\/project):active *) {
-        transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
-        transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-        transition-duration: var(--tw-duration, var(--default-transition-duration));
-      }
-      &:is(:where(.group\/project):active *) {
-        --tw-duration: 0ms;
-        transition-duration: 0ms;
+        transition-property: none;
       }
     }
     .project-svg {
@@ -1093,8 +1086,7 @@
         translate: var(--tw-translate-x) var(--tw-translate-y);
       }
       &:is(:where(.group\/project):active *) {
-        --tw-duration: 0ms;
-        transition-duration: 0ms;
+        transition-property: none;
       }
     }
     .project-container {
@@ -1105,13 +1097,7 @@
         }
       }
       &:active {
-        transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
-        transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-        transition-duration: var(--tw-duration, var(--default-transition-duration));
-      }
-      &:active {
-        --tw-duration: 0ms;
-        transition-duration: 0ms;
+        transition-property: none;
       }
     }
     .social-icon {
@@ -1127,13 +1113,7 @@
         --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
       }
       &:active {
-        transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
-        transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-        transition-duration: var(--tw-duration, var(--default-transition-duration));
-      }
-      &:active {
-        --tw-duration: 0ms;
-        transition-duration: 0ms;
+        transition-property: none;
       }
     }
   }
