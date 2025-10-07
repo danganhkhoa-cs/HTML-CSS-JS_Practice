@@ -82,7 +82,7 @@
     @apply font-bold text-center md:text-left md:w-fit text-2xl xl:text-3xl mt-6 md:mt-0 mb-2 transition duration-200 ease-in-out group-hover/project:text-[#8eccff] will-change-[color];
   }
   .project-svg {
-    @apply size-5 transition duration-200 ease-in-out group-hover/project:-translate-y-0.5 group-hover/project:translate-x-0.5 will-change-transform;
+    @apply md:hidden size-5 transition duration-200 ease-in-out group-hover/project:-translate-y-0.5 group-hover/project:translate-x-0.5 will-change-transform;
   }
   .project-description {
     @apply text-center md:text-left xl:text-lg m-auto md:m-0 max-w-2xl;
@@ -103,23 +103,23 @@
     @apply bg-gradient-to-r from-blue-200 via-blue-200 to-blue-200;
   }
   .social-icon {
-    @apply text-3xl md:text-4xl bg-clip-text text-transparent font-bold bg-gradient-to-br from-[#efefef] to-[#efefef] transition duration-200 ease-in-out hover:-translate-y-2 hover:scale-125 hover:from-[#8eccff] hover:from-40% hover:to-[#7065ff] will-change-[background-image];
+    @apply p-1 text-3xl md:text-4xl bg-clip-text text-transparent font-bold bg-gradient-to-br from-[#efefef] to-[#efefef] transition duration-100 ease-in-out hover:-translate-y-2 hover:scale-125 hover:from-[#8eccff] hover:from-40% hover:to-[#7065ff] will-change-[background-image];
   }
   @media (hover: none) {
     .button {
-      @apply active:scale-95 active:transition-none;
+      @apply active:scale-95 active:opacity-80 duration-75;
     }
     .project-name {
-      @apply group-active/project:text-[#8eccff] group-active/project:transition-none;
+      @apply group-active/project:text-[#8eccff] transition-none;
     }
     .project-svg {
-      @apply group-active/project:transition-none group-active/project:-translate-y-0.5 group-active/project:translate-x-0.5;
+      @apply transition-none group-active/project:-translate-y-0.5 group-active/project:translate-x-0.5;
     }
     .project-container {
-      @apply active:bg-white/10 active:transition-none;
+      @apply active:bg-white/10 transition-none;
     }
     .social-icon {
-      @apply active:from-[#8eccff] active:from-40% active:to-[#7065ff] active:transition-none;
+      @apply active:from-[#8eccff] active:from-40% active:to-[#7065ff] transition-none;
     }
   }
 }
