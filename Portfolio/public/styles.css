@@ -823,6 +823,9 @@
         translate: var(--tw-translate-x) var(--tw-translate-y);
       }
     }
+    @media (width >= 48rem) {
+      display: none;
+    }
   }
   .project-description {
     margin: auto;
@@ -1007,6 +1010,7 @@
     --tw-gradient-to: #efefef;
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
     background-clip: text;
+    padding: calc(var(--spacing) * 1);
     font-size: var(--text-3xl);
     line-height: var(--tw-leading, var(--text-3xl--line-height));
     --tw-font-weight: var(--font-weight-bold);
@@ -1015,8 +1019,8 @@
     transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
-    --tw-duration: 200ms;
-    transition-duration: 200ms;
+    --tw-duration: 100ms;
+    transition-duration: 100ms;
     --tw-ease: var(--ease-in-out);
     transition-timing-function: var(--ease-in-out);
     will-change: background-image;
@@ -1058,6 +1062,8 @@
   }
   @media (hover: none) {
     .button {
+      --tw-duration: 75ms;
+      transition-duration: 75ms;
       &:active {
         --tw-scale-x: 95%;
         --tw-scale-y: 95%;
@@ -1065,18 +1071,17 @@
         scale: var(--tw-scale-x) var(--tw-scale-y);
       }
       &:active {
-        transition-property: none;
+        opacity: 80%;
       }
     }
     .project-name {
+      transition-property: none;
       &:is(:where(.group\/project):active *) {
         color: #8eccff;
       }
-      &:is(:where(.group\/project):active *) {
-        transition-property: none;
-      }
     }
     .project-svg {
+      transition-property: none;
       &:is(:where(.group\/project):active *) {
         --tw-translate-x: calc(var(--spacing) * 0.5);
         translate: var(--tw-translate-x) var(--tw-translate-y);
@@ -1085,22 +1090,18 @@
         --tw-translate-y: calc(var(--spacing) * -0.5);
         translate: var(--tw-translate-x) var(--tw-translate-y);
       }
-      &:is(:where(.group\/project):active *) {
-        transition-property: none;
-      }
     }
     .project-container {
+      transition-property: none;
       &:active {
         background-color: color-mix(in srgb, #fff 10%, transparent);
         @supports (color: color-mix(in lab, red, red)) {
           background-color: color-mix(in oklab, var(--color-white) 10%, transparent);
         }
       }
-      &:active {
-        transition-property: none;
-      }
     }
     .social-icon {
+      transition-property: none;
       &:active {
         --tw-gradient-from: #8eccff;
         --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
@@ -1111,9 +1112,6 @@
       &:active {
         --tw-gradient-to: #7065ff;
         --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
-      }
-      &:active {
-        transition-property: none;
       }
     }
   }
