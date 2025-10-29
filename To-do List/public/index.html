@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-to List</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="bg-(--base) text-(--text) p-resonsive">
+    <header class="p-3 col-span-full">
+      <h1 class="font-bold text-2xl">TO-DO LIST</h1>
+    </header>
+    <main class="col-[2/3]">
+      <button id="new-task-btn" class="new-task-btn">+ New task</button>
+      <div id="task-list" class="task-list">
+        <div class="task-container group/task">
+          <div id="1" class="task bg-(--rose)">
+            <i class="fa-regular fa-square task-status"></i>
+            <p class="task-description">Learning Python every week</p>
+          </div>
+          <i class="fa-solid fa-trash delete-icon peer"></i>
+        </div>
+        <div class="task-container group/task">
+          <div id="2" class="task bg-(--flamingo)">
+            <i class="fa-solid fa-square-check task-status"></i>
+            <p class="task-description line-through opacity-70">
+              Buy oranges for mom
+            </p>
+          </div>
+          <i class="fa-solid fa-trash delete-icon peer"></i>
+        </div>
+      </div>
+    </main>
+    <dialog id="create-task-dialog" class="create-task-dialog">
+      <label for="task-description-input" class="text-lg font-semibold"
+        >Task description:</label
+      >
+      <textarea
+        id="task-description-input"
+        class="task-description-input"
+      ></textarea>
+      <div class="mt-5 flex justify-end gap-2">
+        <button id="cancel-btn" class="cancel-btn">Cancel</button>
+        <button id="save-task-btn" class="save-task-btn">Save</button>
+      </div>
+    </dialog>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Roboto", sans-serif;
+}
+
+@layer base {
+    :root{
+        --rose: #f5e0dc;
+        --flamingo: #f2cdcd;
+        --pink: #f5c2e7;
+        --mauve: #cba6f7;
+        --red: #f38ba8;
+        --maroon: #eba0ac;
+        --peach: #fab387;
+        --yellow: #f9e2af;
+        --green: #a6e3a1;
+        --teal: #94e2d5;
+        --sky: #89dceb;
+        --sapphire: #74c7ec;
+        --blue: #89b4fa;
+        --lavender: #b4befe;
+        --text: #cdd6f4;
+        --subtext1: #bac2de;
+        --overlay2: #9399b2;
+        --overlay1: #7f849c;
+        --overlay0: #6c7086;
+        --surface2: #585b70;
+        --surface1: #45475a;
+        --surface0: #313244;
+        --base: #1e1e2e;
+        --mantle: #181825;
+        --crust: #11111b;
+
+    }
+}
+
+@utility p-resonsive {
+    @apply grid grid-cols-[minmax(1rem,1fr)_minmax(min-content,75rem)_minmax(1rem,1fr)];
+}
+
+@layer components {
+    .create-task-dialog {
+        @apply w-10/12 mx-auto top-1/5 p-5 bg-(--crust) text-(--text) rounded-md border backdrop:bg-[rgba(0,0,0,0.8)]
+    }
+    .task-description-input {
+        @apply block w-full focus:outline-0 p-1 mt-2 rounded-sm bg-(--base)
+    }
+    .new-task-btn {
+        @apply w-full bg-(--blue) text-(--crust) text-lg rounded-lg px-3 py-1 text-center transition font-semibold cursor-pointer hover:-translate-y-0.5
+    }
+    .save-task-btn {
+        @apply bg-(--green) text-(--crust) px-3 py-1 rounded-sm font-semibold cursor-pointer transition hover:-translate-y-0.5
+    }
+    .cancel-btn {
+        @apply bg-(--red) text-(--crust) px-3 py-1 rounded-sm font-semibold cursor-pointer transition hover:-translate-y-0.5
+    }
+    .task-list {
+        @apply mt-5
+    }
+    .task-description {
+        @apply inline select-none
+    }
+    .task {
+        @apply mb-3 p-2 rounded-lg w-fit text-(--crust) cursor-pointer transition peer-hover:opacity-50 hover:scale-105 inline-block
+    }
+    .delete-icon {
+        @apply ml-1 opacity-0 text-(--red) text-sm cursor-pointer transition group-hover/task:opacity-100 hover:scale-125
+    }
+}
