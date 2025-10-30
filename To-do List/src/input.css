@@ -36,12 +36,12 @@
 }
 
 @utility p-resonsive {
-    @apply grid grid-cols-[minmax(1rem,1fr)_minmax(min-content,75rem)_minmax(1rem,1fr)];
+    @apply grid grid-cols-[minmax(1.5rem,1fr)_minmax(min-content,55rem)_minmax(1.5rem,1fr)];
 }
 
 @layer components {
     .create-task-dialog {
-        @apply w-10/12 mx-auto top-1/5 p-5 bg-(--crust) text-(--text) rounded-md border backdrop:bg-[rgba(0,0,0,0.8)]
+        @apply w-10/12 max-w-xl mx-auto top-1/5 p-5 bg-(--crust) text-(--text) rounded-md border backdrop:bg-[rgba(0,0,0,0.8)]
     }
     .task-description-input {
         @apply block w-full focus:outline-0 p-1 mt-2 rounded-sm bg-(--base)
@@ -56,15 +56,21 @@
         @apply bg-(--red) text-(--crust) px-3 py-1 rounded-sm font-semibold cursor-pointer transition hover:-translate-y-0.5
     }
     .task-list {
-        @apply mt-5
+        @apply mt-5 grid grid-cols-1 gap-3
     }
     .task-description {
-        @apply inline select-none
+        @apply inline select-none wrap-anywhere
+    }
+    .task-container {
+        @apply flex items-center
     }
     .task {
-        @apply mb-3 p-2 rounded-lg w-fit text-(--crust) cursor-pointer transition peer-hover:opacity-50 hover:scale-105 inline-block
+        @apply flex-7 p-2 rounded-lg text-(--crust) cursor-pointer transition peer-hover:opacity-50 hover:scale-105 inline-block
     }
     .delete-icon {
-        @apply ml-1 opacity-0 text-(--red) text-sm cursor-pointer transition group-hover/task:opacity-100 hover:scale-125
+        @apply flex-1 p-0 m-0 text-(--red) text-sm cursor-pointer transition hover:scale-125
+    }
+    .color-input {
+        @apply appearance-none w-5 h-5 rounded-xs cursor-pointer checked:outline-2 checked:outline-white hover:outline-2 hover:outline-white
     }
 }
