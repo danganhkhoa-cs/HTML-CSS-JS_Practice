@@ -21,28 +21,12 @@
   </head>
   <body class="bg-(--base) text-(--text) p-resonsive">
     <header class="p-3 col-span-full">
-      <h1 class="font-bold text-2xl">TO-DO LIST</h1>
+      <h1 class="font-bold text-4xl text-center my-10">TO-DO LIST</h1>
     </header>
     <main class="col-[2/3]">
       <button id="new-task-btn" class="new-task-btn">+ New task</button>
-      <div id="task-list" class="task-list">
-        <div class="task-container group/task">
-          <div id="1" class="task bg-(--rose)">
-            <i class="fa-regular fa-square task-status"></i>
-            <p class="task-description">Learning Python every week</p>
-          </div>
-          <i class="fa-solid fa-trash delete-icon peer"></i>
-        </div>
-        <div class="task-container group/task">
-          <div id="2" class="task bg-(--flamingo)">
-            <i class="fa-solid fa-square-check task-status"></i>
-            <p class="task-description line-through opacity-70">
-              Buy oranges for mom
-            </p>
-          </div>
-          <i class="fa-solid fa-trash delete-icon peer"></i>
-        </div>
-      </div>
+      <!-- A task list -->
+      <div id="task-list" class="task-list"></div>
     </main>
     <dialog id="create-task-dialog" class="create-task-dialog">
       <label for="task-description-input" class="text-lg font-semibold"
@@ -51,7 +35,100 @@
       <textarea
         id="task-description-input"
         class="task-description-input"
+        rows="6"
+        placeholder="Type here..."
       ></textarea>
+      <p class="text-lg font-semibold mt-2">Choose a background color:</p>
+      <div
+        id="color-input"
+        class="mt-2 sm:mt-3 md:mt-4 grid grid-cols-7 gap-y-3 gap-x-5 sm:gap-y-4 sm:gap-x-8 md:gap-y-5 md:gap-x-10 w-fit mx-auto"
+      >
+        <input
+          name="color"
+          type="radio"
+          class="color-input bg-(--rose)"
+          value="rose"
+          checked
+        />
+        <input
+          name="color"
+          type="radio"
+          class="color-input bg-(--flamingo)"
+          value="flamingo"
+        />
+        <input
+          name="color"
+          type="radio"
+          class="color-input bg-(--pink)"
+          value="pink"
+        />
+        <input
+          name="color"
+          type="radio"
+          class="color-input bg-(--mauve)"
+          value="mauve"
+        />
+        <input
+          name="color"
+          type="radio"
+          class="color-input bg-(--red)"
+          value="red"
+        />
+        <input
+          name="color"
+          type="radio"
+          class="color-input bg-(--maroon)"
+          value="maroon"
+        />
+        <input
+          name="color"
+          type="radio"
+          class="color-input bg-(--peach)"
+          value="peach"
+        />
+        <input
+          name="color"
+          type="radio"
+          class="color-input bg-(--yellow)"
+          value="yellow"
+        />
+        <input
+          name="color"
+          type="radio"
+          class="color-input bg-(--green)"
+          value="green"
+        />
+        <input
+          name="color"
+          type="radio"
+          class="color-input bg-(--teal)"
+          value="teal"
+        />
+        <input
+          name="color"
+          type="radio"
+          class="color-input bg-(--sky)"
+          value="sky"
+        />
+        <input
+          name="color"
+          type="radio"
+          class="color-input bg-(--sapphire)"
+          value="sapphire"
+        />
+        <input
+          name="color"
+          type="radio"
+          class="color-input bg-(--blue)"
+          value="blue"
+        />
+        <input
+          name="color"
+          type="radio"
+          class="color-input bg-(--lavender)"
+          value="lavender"
+        />
+      </div>
       <div class="mt-5 flex justify-end gap-2">
         <button id="cancel-btn" class="cancel-btn">Cancel</button>
         <button id="save-task-btn" class="save-task-btn">Save</button>
