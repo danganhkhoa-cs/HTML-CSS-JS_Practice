@@ -1,0 +1,53 @@
+name: Deploy All Projects to GitHub Pages
+
+on:
+  push:
+    branches:
+      - dev
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+
+    steps:
+      # 1. Checkout mã nguồn
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Cấu hình Pages
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      # 3. Duyệt qua tất cả thư mục con cấp 1 và upload artifact cho từng thư mục có file index.html
+      - name: Upload all subdirectories
+        shell: bash
+        run: |
+          for dir in */; do
+            if [ -f "${dir}index.html" ]; then
+              echo "🔹 Found project: $dir"
+              mkdir -p "_temp/$dir"
+              cp -r "${dir}"* "_temp/$dir"
+            fi
+          done
+
+          echo "📦 Packing all found projects..."
+          tar -czf all-projects.tar.gz -C _temp .
+
+      # 4. Upload toàn bộ artifact đã đóng gói
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _temp
+
+      # 5. Deploy toàn bộ artifact lên GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
