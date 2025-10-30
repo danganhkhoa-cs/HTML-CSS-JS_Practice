@@ -26,20 +26,23 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      # 3. Duyệt qua tất cả thư mục con cấp 1 và upload artifact cho từng thư mục có file index.html
+      # 3. Duyệt qua tất cả thư mục con cấp 1 và copy nội dung
       - name: Upload all subdirectories
         shell: bash
         run: |
+          mkdir -p _temp
           for dir in */; do
-            if [ -f "${dir}index.html" ]; then
-              echo "🔹 Found project: $dir"
+            if [ -f "${dir}public/index.html" ]; then
+              echo "📁 Found project with public/: $dir"
+              mkdir -p "_temp/$dir"
+              cp -r "${dir}public/"* "_temp/$dir"
+            elif [ -f "${dir}index.html" ]; then
+              echo "📁 Found project with root index.html: $dir"
               mkdir -p "_temp/$dir"
               cp -r "${dir}"* "_temp/$dir"
             fi
           done
-
-          echo "📦 Packing all found projects..."
-          tar -czf all-projects.tar.gz -C _temp .
+          echo "✅ Finished preparing all subdirectories for deployment."
 
       # 4. Upload toàn bộ artifact đã đóng gói
       - name: Upload artifact
