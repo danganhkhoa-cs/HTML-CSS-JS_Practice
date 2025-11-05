@@ -18,43 +18,70 @@ jobs:
       name: github-pages
 
     steps:
-      # 1. Checkout mã nguồn
+      # 1. Lấy mã nguồn
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2. Cấu hình Pages
+      # 2. Cài Node.js (để build các project Vite)
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # 3. Tự động phát hiện project con có Vite, cài & build
+      - name: Build all Vite subprojects
+        shell: bash
+        run: |
+          set -e
+          for dir in */; do
+            if [ -f "${dir}package.json" ] && [ -f "${dir}vite.config.js" ]; then
+              echo "⚙️ Building Vite project in $dir"
+              cd "$dir"
+              npm ci || npm install
+              npm run build || echo "⚠️ Build failed for $dir, skipping..."
+              cd ..
+            else
+              echo "⏩ Skipping non-Vite folder: $dir"
+            fi
+          done
+
+      # 4. Cấu hình GitHub Pages
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      # 3. Duyệt qua tất cả thư mục con cấp 1 và copy nội dung
-      - name: Upload all subdirectories
+      # 5. Gom toàn bộ project sau khi build
+      - name: Collect all built projects
         shell: bash
         run: |
+          set -e
+          rm -rf _temp
           mkdir -p _temp
           for dir in */; do
-            if [ -f "${dir}public/index.html" ]; then
-              echo "📁 Found project with public/: $dir"
-              mkdir -p "_temp/$dir"
-              cp -r "${dir}public/"* "_temp/$dir"
-            elif [ -f "${dir}dist/index.html" ]; then
-              echo "📁 Found project with dist/: $dir"
+            if [ -f "${dir}dist/index.html" ]; then
+              echo "📁 Found built project: $dir"
               mkdir -p "_temp/$dir"
               cp -r "${dir}dist/"* "_temp/$dir"
+            elif [ -f "${dir}public/index.html" ]; then
+              echo "📁 Found static project with public/: $dir"
+              mkdir -p "_temp/$dir"
+              cp -r "${dir}public/"* "_temp/$dir"
             elif [ -f "${dir}index.html" ]; then
-              echo "📁 Found project with root index.html: $dir"
+              echo "📁 Found static root project: $dir"
               mkdir -p "_temp/$dir"
               cp -r "${dir}"* "_temp/$dir"
+            else
+              echo "❌ No build or index.html found in $dir"
             fi
           done
-          echo "✅ Finished preparing all subdirectories for deployment."
+          echo "✅ All projects prepared in _temp."
 
-      # 4. Upload toàn bộ artifact đã đóng gói
+      # 6. Upload artifact cho Pages
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: _temp
 
-      # 5. Deploy toàn bộ artifact lên GitHub Pages
+      # 7. Deploy lên GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
