@@ -1,3 +1,5 @@
+import "/src/style.css";
+
 const homeScore = document.getElementById("home-score");
 const guestScore = document.getElementById("guest-score");
 
