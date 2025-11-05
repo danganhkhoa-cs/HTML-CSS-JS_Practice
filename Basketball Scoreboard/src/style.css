@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: CursedTimer;
+  src: url('/public/CursedTimer.ttf');
+}
+
+@utility font-counter {
+  @apply font-[CursedTimer]
+}
