@@ -7,7 +7,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>basketball-scoreboard</title>
   </head>
-  <body>
+  <body class="bg-amber-50 w-screen h-screen flex justify-center items-center">
+    <div
+      id="score-board"
+      class="flex justify-evenly items-center w-[575px] h-[385px] bg-background-primary"
+    >
+      <div id="home-score-section">
+        <p class="font-sans text-text text-[40px] text-center font-bold">
+          HOME
+        </p>
+        <div class="w-[155px] h-[120px] bg-black rounded-[5px] mt-3">
+          <p id="home-score" class="score-text">0</p>
+        </div>
+        <div class="flex justify-between mt-7">
+          <button id="home-plus-one-point" class="counter-button">+1</button>
+          <button id="home-plus-two-point" class="counter-button">+2</button>
+          <button id="home-plus-three-point" class="counter-button">+3</button>
+        </div>
+      </div>
+      <div id="guest-score-section">
+        <p class="font-sans text-text text-[40px] text-center font-bold">
+          GUEST
+        </p>
+        <div class="w-[155px] h-[120px] bg-black rounded-[5px] mt-3">
+          <p id="guest-score" class="score-text">0</p>
+        </div>
+        <div class="flex justify-between mt-7">
+          <button id="guest-plus-one-point" class="counter-button">+1</button>
+          <button id="guest-plus-two-point" class="counter-button">+2</button>
+          <button id="guest-plus-three-point" class="counter-button">+3</button>
+        </div>
+      </div>
+    </div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

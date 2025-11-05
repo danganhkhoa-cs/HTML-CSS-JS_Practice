@@ -2,9 +2,27 @@
 
 @font-face {
   font-family: CursedTimer;
-  src: url('/public/CursedTimer.ttf');
+  src: url('/CursedTimer.ttf');
+}
+
+@theme {
+  --color-background-primary: #1b244a;
+  --color-text: #eeeeee;
+  --color-black: #080001;
+  --color-red: #f94f6d;
+  --color-light-blue: #9aabd8;
 }
 
 @utility font-counter {
   @apply font-[CursedTimer]
+}
+
+@layer components {
+  .counter-button {
+    @apply w-[45px] h-[45px] rounded-[5px] border-2 text-light-blue font-counter cursor-pointer transition duration-100 hover:bg-white hover:text-black active:scale-90
+  }
+
+  .score-text {
+    @apply font-counter text-red text-[90px] text-center
+  }
 }
