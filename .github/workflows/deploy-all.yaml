@@ -39,7 +39,7 @@ jobs:
             elif [ -f "${dir}dist/index.html" ]; then
               echo "📁 Found project with dist/: $dir"
               mkdir -p "_temp/$dir"
-              cp -r "${dir}"* "_temp/$dir"
+              cp -r "${dir}dist/"* "_temp/$dir"
             elif [ -f "${dir}index.html" ]; then
               echo "📁 Found project with root index.html: $dir"
               mkdir -p "_temp/$dir"
