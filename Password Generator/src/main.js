@@ -152,6 +152,7 @@ function getRandomPassword(length, isContainNumber, isContainSpecialCharacter) {
     if (numberCharacters.includes(character)) {
       if (isContainNumber) {
         result += character;
+        continue;
       } else {
         --i;
         continue;
@@ -160,6 +161,7 @@ function getRandomPassword(length, isContainNumber, isContainSpecialCharacter) {
     if (specialCharacters.includes(character)) {
       if (isContainSpecialCharacter) {
         result += character;
+        continue;
       } else {
         --i;
         continue;
