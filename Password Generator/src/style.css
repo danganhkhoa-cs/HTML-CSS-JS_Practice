@@ -7,6 +7,7 @@
     --color-green-button: #10b981;
     --color-password-container: #1f2937;
     --font-karla: "Karla", sans-serif;
+    --font-mono: "Roboto Mono", monospace;
 }
 
 @layer components {
@@ -14,7 +15,7 @@
         @apply w-full h-px bg-[#2F3E53] my-8;
     }
     .password-result {
-        @apply w-[211px] h-[39] py-1.5 px-3 rounded-md bg-[#273549] text-green-primary text-[16px] text-center text-wrap wrap-break-word;
+        @apply w-[211px] h-[39] py-1.5 px-3 rounded-md bg-[#273549] font-mono text-green-primary text-[16px] text-center text-wrap wrap-break-word;
     }
     .button {
         @apply cursor-pointer transition hover:scale-105 bg-green-button w-[191px] h-[42px] py-[9px] px-[17px] rounded-md
