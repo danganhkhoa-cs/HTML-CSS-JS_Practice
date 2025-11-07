@@ -1,1 +1,25 @@
 @import "tailwindcss";
+
+@theme {
+    --color-gray: #D5D4D8;
+    --color-black: #1c1c1c;
+    --color-green-primary: #4adf86;
+    --color-green-button: #10b981;
+    --color-password-container: #1f2937;
+    --font-karla: "Karla", sans-serif;
+}
+
+@layer components {
+    .line-break {
+        @apply w-full h-px bg-[#2F3E53] my-8;
+    }
+    .password-result {
+        @apply w-[211px] h-[39] py-1.5 rounded-md bg-[#273549] text-green-primary text-[16px] text-center;
+    }
+    .button {
+        @apply bg-green-button w-[191px] h-[42px] py-[9px] px-[17px] rounded-md
+    }
+    .input-character-type-label {
+        @apply cursor-pointer py-1 px-4 rounded-md border border-white select-none
+    }
+}
