@@ -14,12 +14,12 @@
         @apply w-full h-px bg-[#2F3E53] my-8;
     }
     .password-result {
-        @apply w-[211px] h-[39] py-1.5 rounded-md bg-[#273549] text-green-primary text-[16px] text-center;
+        @apply w-[211px] h-[39] py-1.5 px-3 rounded-md bg-[#273549] text-green-primary text-[16px] text-center text-wrap wrap-break-word;
     }
     .button {
-        @apply bg-green-button w-[191px] h-[42px] py-[9px] px-[17px] rounded-md
+        @apply cursor-pointer transition hover:scale-105 bg-green-button w-[191px] h-[42px] py-[9px] px-[17px] rounded-md
     }
     .input-character-type-label {
-        @apply cursor-pointer py-1 px-4 rounded-md border border-white select-none
+        @apply cursor-pointer py-1 px-4 rounded-md border border-white select-none transition duration-100
     }
 }
