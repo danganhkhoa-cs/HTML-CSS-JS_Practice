@@ -178,6 +178,7 @@ function renderPassword() {
 
   if (length > 20 || !length) {
     alert("Length must be interger in range [8, 15]");
+    return;
   }
 
   const password1 = getRandomPassword(
