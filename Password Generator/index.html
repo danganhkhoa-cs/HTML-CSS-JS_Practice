@@ -4,9 +4,56 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>password-generator</title>
+    <title>Password Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body class="bg-amber-50">
+  <body class="bg-black h-screen flex items-center justify-center">
+    <div
+      class="w-[550px] h-[550px] bg-password-container font-karla text-white py-28 px-14"
+    >
+      <h1 class="font-extrabold text-[40px] leading-10">
+        Generate a<br /><span class="text-green-primary">random password</span>
+      </h1>
+      <p class="text-gray text-[20px]">Never use an insecure password again.</p>
+      <button id="generate-password-btn" class="button mt-10">
+        Generate passwords
+      </button>
+      <div class="mt-4 flex justify-between">
+        <input id="number-password" type="checkbox" class="hidden peer/first" />
+        <label
+          for="number-password"
+          class="input-character-type-label peer-checked/first:bg-green-button"
+          >Number</label
+        >
+        <input
+          id="special-character-password"
+          type="checkbox"
+          class="hidden peer/second"
+        />
+        <label
+          for="special-character-password"
+          class="input-character-type-label peer-checked/second:bg-green-button"
+          >Special character</label
+        >
+        <input
+          type="number"
+          placeholder="Password length"
+          class="w-36 p-0 m-0 outline-0"
+        />
+      </div>
+      <div class="line-break"></div>
+      <div class="flex justify-between">
+        <div id="first-password" class="password-result"></div>
+        <div id="second-password" class="password-result"></div>
+      </div>
+    </div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
