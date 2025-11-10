@@ -5,8 +5,53 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Unit Converter</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
-  <body>
+  <body class="bg-black font-mono h-screen flex items-center justify-center">
+    <div class="bg-base w-[550px] h-[729px] flex flex-col relative">
+      <label for="toggle-theme" class="left-0 top-0 absolute group"
+        ><input id="toggle-theme" class="sr-only" type="checkbox" />
+        <div class="toggle-theme-btn hidden group-has-checked:inline-block">
+          <i class="fa-solid fa-moon"></i>
+        </div>
+        <div class="toggle-theme-btn inline-block group-has-checked:hidden">
+          <i class="fa-solid fa-sun"></i>
+        </div>
+      </label>
+      <div class="w-full h-[285px] bg-[#6943FF]">
+        <h1 class="text-[28px] font-extrabold text-white text-center mt-8">
+          Metric/Imperial Unit Conversion
+        </h1>
+        <input id="input-field" class="input-field" type="number" />
+        <button id="convert-btn" class="convert-btn">Convert</button>
+      </div>
+      <div class="w-full flex-1 flex flex-col items-center justify-evenly">
+        <div id="length-container" class="output-container">
+          <h2 class="output-title">Length (Meter/Feet)</h2>
+          <p id="length-result" class="result">
+            20 meters = 65.616 feet | 20 feet = 6.096 meters
+          </p>
+        </div>
+        <div id="volume-container" class="output-container">
+          <h2 class="output-title">Volume (Liters/Gallons)</h2>
+          <p id="volume-result" class="result">
+            20 meters = 65.616 feet | 20 feet = 6.096 meters
+          </p>
+        </div>
+        <div id="mass-container" class="output-container">
+          <h2 class="output-title">Mass (Kilograms/Pounds)</h2>
+          <p id="mass-result" class="result">
+            20 meters = 65.616 feet | 20 feet = 6.096 meters
+          </p>
+        </div>
+      </div>
+    </div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
