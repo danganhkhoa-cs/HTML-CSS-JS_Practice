@@ -27,6 +27,10 @@
   }
 }
 
+@utility transition-smooth {
+  @apply transition-all 
+}
+
 @layer components {
   .input-field {
     @apply block mx-auto mt-8 w-[117px] h-[83px] border-2 border-[#B295FF] rounded-[5px] text-[58px] text-white font-extrabold text-center focus:outline-0
@@ -35,16 +39,16 @@
     @apply block mx-auto mt-6 cursor-pointer bg-white text-[16px] rounded-[5px] w-[117px] h-[42px] transition hover:scale-105
   }
   .output-container {
-    @apply bg-surface-1 w-[500px] text-center py-[30px] rounded-[5px]
+    @apply bg-surface-1 w-[500px] text-center py-[30px] rounded-[5px] transition-smooth
   }
   .output-title {
-    @apply font-semibold text-[20px] text-text-title
+    @apply font-semibold text-[20px] text-text-title transition-smooth
   }
   .result {
-    @apply font-normal text-[14px] text-text-result
+    @apply font-normal text-[14px] text-text-result transition-smooth
   }
   .toggle-theme-btn {
-    @apply p-2 rounded-br-2xl bg-toggle-theme text-background
+    @apply p-2 rounded-br-2xl bg-toggle-theme text-background transition-smooth
   }
 }
 
