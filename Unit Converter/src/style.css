@@ -32,7 +32,7 @@
     @apply block mx-auto mt-8 w-[117px] h-[83px] border-2 border-[#B295FF] rounded-[5px] text-[58px] text-white font-extrabold text-center focus:outline-0
   }
   .convert-btn {
-    @apply block mx-auto mt-6 cursor-pointer bg-white text-[16px] rounded-[5px] w-[117px] h-[42px]
+    @apply block mx-auto mt-6 cursor-pointer bg-white text-[16px] rounded-[5px] w-[117px] h-[42px] transition hover:scale-105
   }
   .output-container {
     @apply bg-surface-1 w-[500px] text-center py-[30px] rounded-[5px]
