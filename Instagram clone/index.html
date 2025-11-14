@@ -5,8 +5,54 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Instagram clone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body>
+  <body
+    class="bg-[#11111b] h-screen font-display flex justify-center items-center"
+  >
+    <div
+      class="w-[375px] h-[612px] bg-[#ededed] overflow-auto [scrollbar-width:thin]"
+    >
+      <div
+        id="header"
+        class="w-full h-[67px] bg-white border-b border-[#C6C6C6] px-3 flex justify-between items-center"
+      >
+        <img
+          src="/logo.png"
+          alt="A logo with text 'Oldagram'"
+          class="w-[127px]"
+        />
+        <img src="/user-avatar.png" class="avatar" />
+      </div>
+      <div class="main">
+        <div class="post">
+          <div class="post-header">
+            <img src="/avatar-vangogh.jpg" class="avatar" />
+            <div class="user-info">
+              <p class="name">Vincent van Gogh</p>
+              <p class="location">Zudert, Netherlands</p>
+            </div>
+          </div>
+          <div class="post-content">
+            <img src="/post-vangogh.jpg" class="post-img" />
+          </div>
+          <div class="post-interaction">
+            <img src="/icon-heart.png" class="interaction-icon" />
+            <img src="/icon-comment.png" class="interaction-icon" />
+            <img src="/icon-dm.png" class="interaction-icon" />
+            <p class="like-count">21,492 likes</p>
+            <p class="comment">vincey1853 just took a few mushrooms lol</p>
+          </div>
+        </div>
+        <div class="post"></div>
+        <div class="post"></div>
+      </div>
+    </div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

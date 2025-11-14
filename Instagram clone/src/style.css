@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@theme {
+    --font-display: "Source Sans 3", sans-serif;
+}
+
+@layer components {
+    .avatar {
+        @apply rounded-full w-[34px]
+    }
+    .post {
+        @apply w-full h-[545px] bg-white
+    }
+    .main {
+        @apply grid grid-cols-1 gap-5
+    }
+    .interaction-icon {
+        @apply w-[24px]
+    }
+}
