@@ -9,12 +9,30 @@
         @apply rounded-full w-[34px]
     }
     .post {
-        @apply w-full h-[545px] bg-white
+        @apply w-full h-[545px] flex flex-col bg-white
     }
     .main {
         @apply grid grid-cols-1 gap-5
     }
     .interaction-icon {
-        @apply w-[24px]
+        @apply inline-block mr-2
+    }
+    .post-header {
+        @apply flex items-center justify-start p-2 gap-2
+    }
+    .name {
+        @apply font-bold
+    }
+    .location {
+        @apply text-[12px]
+    }
+    .post-img {
+        @apply w-full
+    }
+    .post-interaction {
+        @apply flex-1 flex flex-col justify-evenly items-start px-2 py-2 gap-1
+    }
+    .username {
+        @apply font-bold
     }
 }

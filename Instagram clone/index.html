@@ -13,7 +13,7 @@
     />
   </head>
   <body
-    class="bg-[#11111b] h-screen font-display flex justify-center items-center"
+    class="bg-[#11111b] h-screen font-display text-[13px] flex justify-center items-center"
   >
     <div
       class="w-[375px] h-[612px] bg-[#ededed] overflow-auto [scrollbar-width:thin]"
@@ -32,21 +32,30 @@
       <div class="main">
         <div class="post">
           <div class="post-header">
-            <img src="/avatar-vangogh.jpg" class="avatar" />
+            <img id="avatar" class="avatar" src="/avatar-vangogh.jpg" />
             <div class="user-info">
-              <p class="name">Vincent van Gogh</p>
-              <p class="location">Zudert, Netherlands</p>
+              <p id="name" class="name">Vincent van Gogh</p>
+              <p id="location" class="location">Zudert, Netherlands</p>
             </div>
           </div>
-          <div class="post-content">
+          <div id="post-content" class="post-content">
             <img src="/post-vangogh.jpg" class="post-img" />
           </div>
           <div class="post-interaction">
-            <img src="/icon-heart.png" class="interaction-icon" />
-            <img src="/icon-comment.png" class="interaction-icon" />
-            <img src="/icon-dm.png" class="interaction-icon" />
-            <p class="like-count">21,492 likes</p>
-            <p class="comment">vincey1853 just took a few mushrooms lol</p>
+            <div>
+              <img
+                id="heart-icon"
+                src="/icon-heart.png"
+                class="interaction-icon w-6"
+              />
+              <img src="/icon-comment.png" class="interaction-icon w-5" />
+              <img src="/icon-dm.png" class="interaction-icon w-6" />
+            </div>
+            <p id="like-count" class="font-bold">21,492 likes</p>
+            <p id="comment">
+              <span id="username" class="username">vincey1853</span> just took a
+              few mushrooms lol
+            </p>
           </div>
         </div>
         <div class="post"></div>
