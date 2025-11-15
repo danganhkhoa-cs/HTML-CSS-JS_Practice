@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Instagram clone</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,45 +23,14 @@
         class="w-full h-[67px] bg-white border-b border-[#C6C6C6] px-3 flex justify-between items-center"
       >
         <img
-          src="/logo.png"
+          src="logo.png"
           alt="A logo with text 'Oldagram'"
           class="w-[127px]"
         />
-        <img src="/user-avatar.png" class="avatar" />
+        <img src="user-avatar.png" class="avatar" />
       </div>
-      <div class="main">
-        <div class="post">
-          <div class="post-header">
-            <img id="avatar" class="avatar" src="/avatar-vangogh.jpg" />
-            <div class="user-info">
-              <p id="name" class="name">Vincent van Gogh</p>
-              <p id="location" class="location">Zudert, Netherlands</p>
-            </div>
-          </div>
-          <div id="post-content" class="post-content">
-            <img src="/post-vangogh.jpg" class="post-img" />
-          </div>
-          <div class="post-interaction">
-            <div>
-              <img
-                id="heart-icon"
-                src="/icon-heart.png"
-                class="interaction-icon w-6"
-              />
-              <img src="/icon-comment.png" class="interaction-icon w-5" />
-              <img src="/icon-dm.png" class="interaction-icon w-6" />
-            </div>
-            <p id="like-count" class="font-bold">21,492 likes</p>
-            <p id="comment">
-              <span id="username" class="username">vincey1853</span> just took a
-              few mushrooms lol
-            </p>
-          </div>
-        </div>
-        <div class="post"></div>
-        <div class="post"></div>
-      </div>
+      <div id="main" class="main"></div>
     </div>
-    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="src/main.js"></script>
   </body>
 </html>
