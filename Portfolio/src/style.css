@@ -61,10 +61,10 @@
     @apply relative w-fit bg-[#10183a] rounded-md pt-2 pb-2 pl-5 pr-5 border-gray-700 font-bold text-[clamp(16px,2vw,18px)] cursor-default transition duration-200 ease-in-out hover:-translate-y-1 hover:scale-110;
   }
   .hero-bg {
-    @apply bg-[url('hero_background.webp')] bg-cover bg-center;
+    @apply bg-[url('/public/hero_background.webp')] bg-cover bg-center;
   }
   .contact-bg {
-    @apply bg-[url('contact_background.webp')] bg-cover bg-center;
+    @apply bg-[url('/public/contact_background.webp')] bg-cover bg-center;
   }
   .hero-blur-layer {
     @apply absolute inset-0 -z-10 bg-[linear-gradient(to_bottom,#000212_0%,#000212_1%,transparent_10%,transparent_80%,#000212_95%,#000212_100%)];
