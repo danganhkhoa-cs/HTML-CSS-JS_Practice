@@ -9,7 +9,7 @@
     @apply text-[#efefef];
   }
   .text-gradient-bold {
-    @apply bg-gradient-to-r from-[#8eccff] from-40% to-[#7065ff] bg-clip-text text-transparent font-bold;
+    @apply bg-linear-to-r from-[#8eccff] from-40% to-[#7065ff] bg-clip-text text-transparent font-bold;
   }
   .flex-col-center {
     @apply flex flex-col justify-center items-center;
@@ -42,17 +42,17 @@
 
 @layer components {
   .divider {
-    @apply col-span-full h-[1px] md:h-[2px] w-[50vw] bg-gradient-to-r m-auto from-transparent via-blue-200 to-transparent;
+    @apply col-span-full h-px md:h-0.5 w-[50vw] bg-linear-to-r m-auto from-transparent via-blue-200 to-transparent;
   }
   .button {
-    @apply relative bg-gradient-to-r from-blue-400 via-[#7065ff] to-[#4a3ef7] rounded-md cursor-pointer transition duration-200 ease-in-out hover:scale-105 will-change-transform;
+    @apply relative bg-linear-to-r from-blue-400 via-[#7065ff] to-[#4a3ef7] rounded-md cursor-pointer transition duration-200 ease-in-out hover:scale-105 will-change-transform;
   }
   .nav-link {
     @apply relative bg-transparent text-[0.8rem] md:text-[0.9rem] lg:text-[1rem] font-bold py-1 px-4 md:px-6 rounded-md overflow-hidden;
   }
   .nav-link::before {
     content: "";
-    @apply absolute inset-0 -z-10 bg-gradient-to-r from-blue-400/90 via-[#7065ff]/90 to-[#4a3ef7]/90 opacity-0 transition duration-200 ease-in-out;
+    @apply absolute inset-0 -z-10 bg-linear-to-r from-blue-400/90 via-[#7065ff]/90 to-[#4a3ef7]/90 opacity-0 transition duration-200 ease-in-out;
   }
   .nav-link:hover::before {
     @apply opacity-100;
@@ -61,16 +61,16 @@
     @apply relative w-fit bg-[#10183a] rounded-md pt-2 pb-2 pl-5 pr-5 border-gray-700 font-bold text-[clamp(16px,2vw,18px)] cursor-default transition duration-200 ease-in-out hover:-translate-y-1 hover:scale-110;
   }
   .hero-bg {
-    @apply relative bg-[url('hero-background.webp')] bg-cover bg-center;
+    @apply bg-[url('hero-background.webp')] bg-cover bg-center;
   }
   .contact-bg {
-    @apply relative bg-[url('contact-background.webp')] bg-cover bg-center z-0;
+    @apply bg-[url('contact-background.webp')] bg-cover bg-center;
   }
   .hero-blur-layer {
-    @apply absolute inset-0 bg-[linear-gradient(to_bottom,_#000212_0%,_#000212_1%,_transparent_10%,_transparent_80%,_#000212_95%,_#000212_100%)];
+    @apply absolute inset-0 -z-10 bg-[linear-gradient(to_bottom,#000212_0%,#000212_1%,transparent_10%,transparent_80%,#000212_95%,#000212_100%)];
   }
   .contact-blur-layer {
-    @apply absolute inset-0 bg-[linear-gradient(to_bottom,_#000212_0%,_#000212_5%,_transparent_20%,_transparent_90%,_#000212_98%,_#000212_100%)] z-0;
+    @apply absolute inset-0 -z-10 bg-[linear-gradient(to_bottom,#000212_0%,#000212_5%,transparent_20%,transparent_90%,#000212_98%,#000212_100%)];
   }
   .heading-after {
     @apply w-6 h-1 rounded-md bg-[#c7d3fc];
@@ -88,7 +88,7 @@
     @apply text-center md:text-left xl:text-lg m-auto md:m-0 max-w-2xl;
   }
   .project-container {
-    @apply group-hover/all:opacity-40 hover:!opacity-100 md:hover:scale-105 p-6 mb-4 md:mb-0 md:grid md:grid-cols-2 md:items-center md:gap-10 md:max-w-[900px] xl:max-w-[1000px] bg-transparent transition duration-200 ease-in-out hover:bg-white/10 md:hover:bg-transparent rounded-[24px] will-change-[background-color];
+    @apply group-hover/all:opacity-40 hover:opacity-100! md:hover:scale-105 p-6 mb-4 md:mb-0 md:grid md:grid-cols-2 md:items-center md:gap-10 md:max-w-[900px] xl:max-w-[1000px] bg-transparent transition duration-200 ease-in-out hover:bg-white/10 md:hover:bg-transparent rounded-[24px] will-change-[background-color];
   }
   .input-container {
     @apply pb-6;
@@ -97,13 +97,13 @@
     @apply block w-full p-4 bg-[#000212] rounded-lg mt-2 text-[0.9rem] focus:outline-0 focus:border-0;
   }
   .glow-box {
-    @apply relative before:transition before:duration-300 before:ease-in-out before:absolute before:-inset-2 before:rounded-lg before:bg-gradient-to-r before:from-blue-400 before:via-[#7065ff] before:to-[#4a3ef7] before:blur-md before:-z-1;
+    @apply relative before:transition before:duration-300 before:ease-in-out before:absolute before:-inset-2 before:rounded-lg before:bg-linear-to-r before:from-blue-400 before:via-[#7065ff] before:to-[#4a3ef7] before:blur-md before:-z-1;
   }
   .glow-box:focus-within::before {
-    @apply bg-gradient-to-r from-blue-200 via-blue-200 to-blue-200;
+    @apply bg-linear-to-r from-blue-200 via-blue-200 to-blue-200;
   }
   .social-icon {
-    @apply p-1 text-3xl md:text-4xl bg-clip-text text-transparent font-bold bg-gradient-to-br from-[#efefef] to-[#efefef] transition duration-100 ease-in-out hover:-translate-y-2 hover:scale-125 hover:from-[#8eccff] hover:from-40% hover:to-[#7065ff] will-change-[background-image];
+    @apply p-1 text-3xl md:text-4xl bg-clip-text text-transparent font-bold bg-linear-to-br from-[#efefef] to-[#efefef] transition duration-100 ease-in-out hover:-translate-y-2 hover:scale-125 hover:from-[#8eccff] hover:from-40% hover:to-[#7065ff] will-change-[background-image];
   }
   @media (hover: none) {
     .button {

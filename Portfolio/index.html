@@ -24,19 +24,21 @@
       <div class="fixed top-0 z-50 bg-white/5 backdrop-blur-md w-full h-20">
         <!--Avatar and navbar-->
         <div id="general-info" class="relative flex h-full items-center w-full">
-          <div
-            class="inline-block bg-[url('avatar.jpg')] bg-cover bg-center w-12 h-12 ml-4 md:ml-10 mr-4 rounded-full"
-          ></div>
+          <img
+            src="avatar.jpg"
+            class="inline-block w-12 h-12 ml-4 md:ml-10 mr-4 rounded-full"
+            alt="My avatar"
+          />
           <p class="inline-block font-bold text-[15px] md:text-[18px]">
             DANG ANH KHOA
           </p>
-          <nav
-            class="hidden sm:grid grid-flow-col items-center md:gap-5 ml-auto mr-4 md:mr-6"
-          >
-            <a href="./#hero" class="nav-link">HOME</a>
-            <a href="./#about-me" class="nav-link">ABOUT</a>
-            <a href="./#projects" class="nav-link">PROJECTS</a>
-            <a href="./#contact" class="nav-link">CONTACT</a>
+          <nav class="ml-auto mr-4 md:mr-6">
+            <ul class="hidden sm:grid grid-flow-col items-center md:gap-5">
+              <li class="nav-link"><a href="./#hero">HOME</a></li>
+              <li class="nav-link"><a href="./#about-me">ABOUT</a></li>
+              <li class="nav-link"><a href="./#projects">PROJECTS</a></li>
+              <li class="nav-link"><a href="./#contact">CONTACT</a></li>
+            </ul>
           </nav>
         </div>
       </div>
@@ -45,7 +47,7 @@
       <!-- Hero section -->
       <section
         id="hero"
-        class="col-span-full flex-col-center gap-8 w-full h-120 min-h-fit sm:h-dvh hero-bg"
+        class="relative z-0 col-span-full flex-col-center gap-8 w-full h-120 min-h-fit sm:h-dvh hero-bg"
       >
         <div class="hero-blur-layer"></div>
         <h1
@@ -143,7 +145,11 @@
             target="_blank"
             class="w-fit m-auto"
             ><div class="project-container group/project">
-              <img class="project-img" src="placeholder.webp" />
+              <img
+                class="project-img"
+                src="placeholder.webp"
+                alt="Project description"
+              />
               <div>
                 <h3 class="project-name">
                   Project Name<span class="inline-block"
@@ -175,7 +181,11 @@
             target="_blank"
             class="w-fit m-auto"
             ><div class="project-container group/project">
-              <img class="project-img" src="placeholder.webp" />
+              <img
+                class="project-img"
+                src="placeholder.webp"
+                alt="Project description"
+              />
               <div>
                 <h3 class="project-name">
                   Project Name<span class="inline-block"
@@ -206,7 +216,11 @@
             target="_blank"
             class="w-fit m-auto"
             ><div class="project-container group/project">
-              <img class="project-img" src="placeholder.webp" />
+              <img
+                class="project-img"
+                src="placeholder.webp"
+                alt="Project description"
+              />
               <div>
                 <h3 class="project-name">
                   Project Name<span class="inline-block"
@@ -237,7 +251,11 @@
             target="_blank"
             class="w-fit m-auto"
             ><div class="project-container group/project">
-              <img class="project-img" src="placeholder.webp" />
+              <img
+                class="project-img"
+                src="placeholder.webp"
+                alt="Project description"
+              />
               <div>
                 <h3 class="project-name">
                   Project Name<span class="inline-block"
@@ -267,7 +285,7 @@
         </div>
       </section>
       <!--CONTACT-->
-      <section id="contact" class="col-span-full h-fit contact-bg">
+      <section id="contact" class="relative z-0 col-span-full h-fit contact-bg">
         <div class="contact-blur-layer"></div>
         <div class="flex-col-center gap-2 mt-32 md:mt-36">
           <h2
@@ -329,22 +347,44 @@
       <div
         class="flex flex-col items-center justify-start h-36 md:h-48 md:pt-6"
       >
-        <div class="flex-row-center gap-4 md:gap-8">
-          <a href="mailto:anhkhoa200511@gmail.com" target="_blank"
-            ><i class="social-icon fa-regular fa-envelope"></i
-          ></a>
-          <a href="https://www.facebook.com/lineageos17.0" target="_blank"
-            ><i class="social-icon fa-brands fa-square-facebook"></i
-          ></a>
-          <a href="https://github.com/danganhkhoa-cs" target="_blank"
-            ><i class="social-icon fa-brands fa-github"></i
-          ></a>
-          <a
-            href="https://www.linkedin.com/in/dang-anh-khoa-851633380/"
-            target="_blank"
-            ><i class="social-icon fa-brands fa-linkedin-in"></i
-          ></a>
-        </div>
+        <ul class="flex-row-center gap-4 md:gap-8">
+          <li>
+            <a
+              href="mailto:anhkhoa200511@gmail.com"
+              target="_blank"
+              aria-label="Contact me via email"
+              ><i class="social-icon fa-regular fa-envelope"></i
+            ></a>
+          </li>
+
+          <li>
+            <a
+              href="https://www.facebook.com/lineageos17.0"
+              target="_blank"
+              aria-label="Connect with me on facebook"
+              ><i class="social-icon fa-brands fa-square-facebook"></i
+            ></a>
+          </li>
+
+          <li>
+            <a
+              href="https://github.com/danganhkhoa-cs"
+              target="_blank"
+              aria-label="Visit my github profile"
+              ><i class="social-icon fa-brands fa-github"></i
+            ></a>
+          </li>
+
+          <li>
+            <a
+              href="https://www.linkedin.com/in/dang-anh-khoa-851633380/"
+              target="_blank"
+              aria-label="Visit my linkedin profile"
+              ><i class="social-icon fa-brands fa-linkedin-in"></i
+            ></a>
+          </li>
+        </ul>
+
         <p
           class="font-bold text-center text-[0.8rem] md:text-[1rem] pt-10 md:pt-12"
         >
