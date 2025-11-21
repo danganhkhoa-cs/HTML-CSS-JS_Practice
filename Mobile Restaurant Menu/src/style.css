@@ -1,1 +1,30 @@
-@import 'tailwindcss'
+@import 'tailwindcss';
+
+@theme {
+    --color-accent: #16DB99;
+    --color-confirmation-div: #ecfdf5;
+    --color-confirmation-text: #065f46;
+}
+
+@layer theme {
+    .blue {
+        --color-accent: #38bdf8;
+        --color-confirmation-div: #f0f9ff;
+        --color-confirmation-text: #075985;
+    }
+    .purple {
+        --color-accent: #a78bfa;
+        --color-confirmation-div: #f5f3ff;
+        --color-confirmation-text: #5b21b6;
+    }
+    .red {
+        --color-accent: #fb7185;
+        --color-confirmation-div: #fff1f2;
+        --color-confirmation-text: #9f1239;
+    }
+    .orange {
+        --color-accent: #fbbf24;
+        --color-confirmation-div: #fffbeb;
+        --color-confirmation-text: #92400e;
+    }
+}
