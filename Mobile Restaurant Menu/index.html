@@ -36,9 +36,42 @@
 					The best burgers and pizzas in town.
 				</p>
 			</div>
-			<!-- FOOD LIST -->
-			<div class="mt-4">
-				<ul id="food-list" class="py-5 px-10"></ul>
+			<div class="px-10">
+				<!-- FOOD LIST -->
+				<div class="mt-4">
+					<ul id="food-list" class="py-5"></ul>
+				</div>
+				<!-- ORDER CONFIRMATION -->
+				<div id="order-confirmation" class="">
+					<div class="divider"></div>
+					<div class="h-fit">
+						<h2 class="text-[28px] text-center">Your order</h2>
+						<div class="mt-5">
+							<ul id="ordered-food-list">
+								<li class="ordered-item">
+									<p class="ordered-name">Pizza</p>
+									<div class="remove-btn">remove</div>
+									<p class="ordered-price">
+										<span class="ordered-quantity">1 x </span>$14
+									</p>
+								</li>
+								<li class="ordered-item">
+									<p class="ordered-name">Pizza</p>
+									<div class="remove-btn">remove</div>
+									<p class="ordered-price">
+										<span class="ordered-quantity">1 x </span>$14
+									</p>
+								</li>
+							</ul>
+							<div class="bg-black h-0.5 my-3"></div>
+							<div class="ordered-item">
+								<p class="ordered-name">Total price:</p>
+								<p class="ordered-price">$14</p>
+							</div>
+							<button id="order-btn" class="order-btn">Complete order</button>
+						</div>
+					</div>
+				</div>
 			</div>
 		</main>
 		<script type="module" src="/src/main.js"></script>

@@ -55,4 +55,20 @@
 	.divider {
 		@apply h-px w-full bg-[#D2D2D2] my-8;
 	}
+	/* Order Confirmation */
+	.ordered-item {
+		@apply flex items-center;
+	}
+	.ordered-name {
+		@apply text-[28px];
+	}
+	.remove-btn {
+		@apply font-mono ml-2 mt-1 text-[#bbbbbb] text-[12px];
+	}
+	.ordered-price {
+		@apply text-[22px] ml-auto;
+	}
+	.order-btn {
+		@apply h-[60px] w-full bg-accent font-mono font-bold text-white text-[18px] mt-10 rounded-md;
+	}
 }
