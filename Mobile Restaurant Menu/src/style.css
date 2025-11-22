@@ -50,10 +50,10 @@
 		@apply rounded-full border w-[50px] h-[50px] text-xl ml-auto mr-3;
 	}
 	.item {
-		@apply flex items-center;
+		@apply flex items-center border-b border-[#D2D2D2] pb-5 last:pb-0 last:border-none;
 	}
 	.divider {
-		@apply h-px w-full bg-[#D2D2D2] my-8;
+		@apply h-px w-full bg-[#D2D2D2] mb-8;
 	}
 	/* Order Confirmation */
 	.ordered-item {
@@ -63,7 +63,7 @@
 		@apply text-[28px];
 	}
 	.remove-btn {
-		@apply font-mono ml-2 mt-1 text-[#bbbbbb] text-[12px];
+		@apply font-mono ml-2 mt-1 text-[#bbbbbb] text-[12px] hover:text-red-500 cursor-pointer select-none;
 	}
 	.ordered-price {
 		@apply text-[22px] ml-auto;
