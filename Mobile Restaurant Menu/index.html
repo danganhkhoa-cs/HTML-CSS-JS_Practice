@@ -39,10 +39,10 @@
 			<div class="px-10">
 				<!-- FOOD LIST -->
 				<div class="mt-4">
-					<ul id="food-list" class="py-5"></ul>
+					<ul id="food-list" class="py-5 space-y-5"></ul>
 				</div>
 				<!-- ORDER CONFIRMATION -->
-				<div id="order-confirmation" class="">
+				<div id="order-confirmation" class="hidden">
 					<div class="divider"></div>
 					<div class="h-fit">
 						<h2 class="text-[28px] text-center">Your order</h2>
@@ -66,7 +66,7 @@
 							<div class="bg-black h-0.5 my-3"></div>
 							<div class="ordered-item">
 								<p class="ordered-name">Total price:</p>
-								<p class="ordered-price">$14</p>
+								<p class="ordered-price">$<span id="total-price">14</span></p>
 							</div>
 							<button id="order-btn" class="order-btn">Complete order</button>
 						</div>
