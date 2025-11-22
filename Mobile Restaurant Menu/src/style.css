@@ -1,30 +1,58 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @theme {
-    --color-accent: #16DB99;
-    --color-confirmation-div: #ecfdf5;
-    --color-confirmation-text: #065f46;
+	--font-primary: "Smythe", system-ui;
+	--color-accent: #16db99;
+	--color-confirmation-div: #ecfdf5;
+	--color-confirmation-text: #065f46;
 }
 
 @layer theme {
-    .blue {
-        --color-accent: #38bdf8;
-        --color-confirmation-div: #f0f9ff;
-        --color-confirmation-text: #075985;
-    }
-    .purple {
-        --color-accent: #a78bfa;
-        --color-confirmation-div: #f5f3ff;
-        --color-confirmation-text: #5b21b6;
-    }
-    .red {
-        --color-accent: #fb7185;
-        --color-confirmation-div: #fff1f2;
-        --color-confirmation-text: #9f1239;
-    }
-    .orange {
-        --color-accent: #fbbf24;
-        --color-confirmation-div: #fffbeb;
-        --color-confirmation-text: #92400e;
-    }
+	.blue {
+		--color-accent: #38bdf8;
+		--color-confirmation-div: #f0f9ff;
+		--color-confirmation-text: #075985;
+	}
+	.purple {
+		--color-accent: #a78bfa;
+		--color-confirmation-div: #f5f3ff;
+		--color-confirmation-text: #5b21b6;
+	}
+	.red {
+		--color-accent: #fb7185;
+		--color-confirmation-div: #fff1f2;
+		--color-confirmation-text: #9f1239;
+	}
+	.orange {
+		--color-accent: #fbbf24;
+		--color-confirmation-div: #fffbeb;
+		--color-confirmation-text: #92400e;
+	}
+}
+
+@layer components {
+	.emoji {
+		@apply text-[78.72px];
+	}
+	.name {
+		@apply text-[28px];
+	}
+	.ingredients {
+		@apply text-[16px] text-[#8b8b8b];
+	}
+	.price {
+		@apply text-[20px];
+	}
+	.description {
+		@apply ml-5;
+	}
+	.add-btn {
+		@apply rounded-full border w-[50px] h-[50px] text-xl ml-auto mr-3;
+	}
+	.item {
+		@apply flex items-center;
+	}
+	.divider {
+		@apply h-px w-full bg-[#D2D2D2] my-8;
+	}
 }

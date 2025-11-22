@@ -1,12 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mobile Restaurant Menu</title>
-  </head>
-  <body class="bg-black">
-    <script type="module" src="/src/main.js"></script>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Mobile Restaurant Menu</title>
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Smythe&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- Awesome Font -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+			integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+	</head>
+	<body class="bg-black h-full flex items-center justify-center font-primary">
+		<main class="w-[600px] h-[1161px] bg-white z-0">
+			<!-- HEADER -->
+			<div
+				class="flex justify-center flex-col pl-12 relative h-[167px] overflow-hidden"
+			>
+				<img
+					src="/header.jpg"
+					class="absolute h-[400px] w-full -z-10 -top-[167px] left-0"
+				/>
+				<h1 class="text-white text-[39px]">Jimmy's Diner</h1>
+				<p class="text-white text-[22.42px]">
+					The best burgers and pizzas in town.
+				</p>
+			</div>
+			<!-- FOOD LIST -->
+			<div class="mt-4">
+				<ul id="food-list" class="py-5 px-10"></ul>
+			</div>
+		</main>
+		<script type="module" src="/src/main.js"></script>
+	</body>
 </html>
