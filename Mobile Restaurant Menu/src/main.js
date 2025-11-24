@@ -7,7 +7,52 @@ let totalPrice = 0;
 const foodListElement = document.getElementById("food-list");
 const orderedfoodListElement = document.getElementById("ordered-food-list");
 const orderConfirmationElement = document.getElementById("order-confirmation");
+const orderButton = document.getElementById("order-btn");
 const totalPriceElement = document.getElementById("total-price");
+const cardModal = document.getElementById("card-modal");
+const cardModalContent = document.getElementById("card-modal-content");
+const modalName = document.getElementById("modal-name");
+const modalCardNumber = document.getElementById("modal-card-number");
+const modalCVV = document.getElementById("modal-cvv");
+const cardForm = document.getElementById("card-form");
+const confirmationMessageDiv = document.getElementById("confirmation-message");
+const confirmationMessage = document.querySelector("#confirmation-message p");
+
+orderButton.addEventListener("click", () => {
+	cardModal.style.display = "block";
+});
+
+cardModalContent.addEventListener("click", (e) => {
+	if (e.target.closest("#modal-cancel")) {
+		cardModal.style.display = "none";
+	} else if (e.target.closest("#modal-submit")) {
+		if (cardForm.checkValidity()) {
+			e.preventDefault();
+			resetOrderedFoodList();
+			cardModal.style.display = "none";
+			confirmationMessageDiv.style.display = "block";
+			confirmationMessage.textContent = `Thanks, ${modalName.value}! Your order is on its way!`;
+			resetModal();
+		}
+	}
+});
+
+window.onclick = (e) => {
+	if (e.target == cardModal) {
+		cardModal.style.display = "none";
+	}
+};
+
+const resetModal = () => {
+	modalName.value = "";
+	modalCardNumber.value = "";
+	modalCVV.value = "";
+};
+
+const resetOrderedFoodList = () => {
+	orderedfoodList = [];
+	renderOrderedFoodConfirmation(orderedfoodList);
+};
 
 foodListElement.addEventListener("click", (e) => {
 	if (e.target.closest(".add-btn")) {
@@ -49,11 +94,13 @@ orderedfoodListElement.addEventListener("click", (e) => {
 
 const renderOrderedFoodConfirmation = (orderedfoodList, totalPrice) => {
 	if (orderedfoodList.length === 0) {
-		orderConfirmationElement.classList.add("hidden");
+		orderConfirmationElement.style.display = "none";
+		totalPrice = 0;
 		return;
-	} else {
-		orderConfirmationElement.classList.remove("hidden");
 	}
+	confirmationMessageDiv.style.display = "none";
+	orderConfirmationElement.style.display = "block";
+
 	const htmlFoodText = orderedfoodList
 		.map(
 			({ id, name, price, quantity }) => `
