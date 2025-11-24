@@ -7,6 +7,12 @@
 	--color-confirmation-text: #065f46;
 }
 
+@layer base {
+	button {
+		@apply cursor-pointer transition hover:-translate-y-1;
+	}
+}
+
 @layer theme {
 	.blue {
 		--color-accent: #38bdf8;
@@ -47,7 +53,7 @@
 		@apply ml-5;
 	}
 	.add-btn {
-		@apply rounded-full border w-[50px] h-[50px] text-xl ml-auto mr-3;
+		@apply rounded-full border w-[50px] h-[50px] text-xl ml-auto mr-3 hover:translate-0;
 	}
 	.item {
 		@apply flex items-center border-b border-[#D2D2D2] pb-5 last:pb-0 last:border-none;
@@ -63,12 +69,19 @@
 		@apply text-[28px];
 	}
 	.remove-btn {
-		@apply font-mono ml-2 mt-1 text-[#bbbbbb] text-[12px] hover:text-red-500 cursor-pointer select-none;
+		@apply font-mono ml-2 mt-1 text-[#bbbbbb] text-[12px] hover:text-red-500 select-none;
 	}
 	.ordered-price {
 		@apply text-[22px] ml-auto;
 	}
 	.order-btn {
 		@apply h-[60px] w-full bg-accent font-mono font-bold text-white text-[18px] mt-10 rounded-md;
+	}
+	/* Card Modal */
+	.card-modal-content {
+		@apply absolute inset-0 w-[524px] h-fit m-auto p-5 bg-white shadow-[0px_0px_1000px_black] font-sans rounded-md;
+	}
+	.modal-input {
+		@apply block w-full p-3 mt-2 focus:outline-none border rounded-md;
 	}
 }

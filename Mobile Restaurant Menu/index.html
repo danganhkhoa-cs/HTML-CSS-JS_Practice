@@ -22,7 +22,7 @@
 		/>
 	</head>
 	<body class="bg-black h-full flex items-center justify-center font-primary">
-		<main class="w-[600px] h-[1161px] bg-white z-0">
+		<main class="w-[600px] h-[1161px] relative bg-white z-0">
 			<!-- HEADER -->
 			<div
 				class="flex justify-center flex-col pl-12 relative h-[167px] overflow-hidden"
@@ -47,22 +47,7 @@
 					<div class="h-fit">
 						<h2 class="text-[28px] text-center">Your order</h2>
 						<div class="mt-5">
-							<ul id="ordered-food-list">
-								<li class="ordered-item">
-									<p class="ordered-name">Pizza</p>
-									<div class="remove-btn">remove</div>
-									<p class="ordered-price">
-										<span class="ordered-quantity">1 x </span>$14
-									</p>
-								</li>
-								<li class="ordered-item">
-									<p class="ordered-name">Pizza</p>
-									<div class="remove-btn">remove</div>
-									<p class="ordered-price">
-										<span class="ordered-quantity">1 x </span>$14
-									</p>
-								</li>
-							</ul>
+							<ul id="ordered-food-list"></ul>
 							<div class="bg-black h-0.5 my-3"></div>
 							<div class="ordered-item">
 								<p class="ordered-name">Total price:</p>
@@ -72,8 +57,73 @@
 						</div>
 					</div>
 				</div>
+				<!-- CONFIRMATION MESSAGE -->
+				<div
+					id="confirmation-message"
+					class="hidden bg-confirmation-div text-center text-confirmation-text text-3xl py-10 px-5 rounded-md"
+				>
+					<p>Thanks, khoa! Your order is on its way!</p>
+				</div>
+			</div>
+
+			<!-- CARD INFO MODAL -->
+			<div id="card-modal" class="hidden fixed inset-0 bg-transparent">
+				<div id="card-modal-content" class="card-modal-content">
+					<h1 class="text-3xl text-center font-bold m-5">Enter card details</h1>
+					<form id="card-form" class="flex flex-col gap-5 text-2xl">
+						<div>
+							<label for="modal-name">Enter your name:</label>
+							<input
+								id="modal-name"
+								class="modal-input"
+								type="text"
+								placeholder="Lineage Michel"
+								required
+							/>
+						</div>
+						<div>
+							<label for="modal-card-number">Enter your card number:</label>
+							<input
+								id="modal-card-number"
+								class="modal-input"
+								type="text"
+								pattern="\d*"
+								minlength="16"
+								maxlength="16"
+								placeholder="0123456789101112"
+								required
+							/>
+						</div>
+						<div>
+							<label for="modal-cvv">Enter your CVV:</label>
+							<input
+								id="modal-cvv"
+								class="modal-input"
+								type="text"
+								pattern="\d*"
+								maxlength="3"
+								placeholder="123"
+								required
+							/>
+						</div>
+						<button
+							id="modal-submit"
+							class="bg-accent text-2xl text-white font-bold py-4 rounded-md mt-5"
+							type="submit"
+						>
+							Pay
+						</button>
+					</form>
+					<button
+						id="modal-cancel"
+						class="absolute right-0 top-0 text-red-500 text-xl font-bold hover:bg-black hover:translate-0 px-3 py-2 rounded-tr-md rounded-bl-md"
+					>
+						X
+					</button>
+				</div>
 			</div>
 		</main>
+
 		<script type="module" src="/src/main.js"></script>
 	</body>
 </html>
