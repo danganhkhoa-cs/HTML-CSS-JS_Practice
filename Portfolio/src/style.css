@@ -120,13 +120,32 @@
 		@apply pb-6;
 	}
 	.input-field {
-		@apply block w-full p-4 bg-[#000212] rounded-lg mt-2 text-[0.9rem] focus:outline-0 focus:border-0;
+		@apply block w-full p-4 bg-[#000212] rounded-lg mt-2 text-[1rem] focus:outline-0 focus:border-0;
 	}
 	.glow-box {
-		@apply relative before:transition before:duration-300 before:ease-in-out before:absolute before:-inset-2 before:rounded-lg before:bg-linear-to-r before:from-blue-400 before:via-[#7065ff] before:to-[#4a3ef7] before:blur-md before:-z-1;
+		@apply relative z-0; /* Tạo stacking context mới */
+	}
+	/* LỚP 1: Gradient mặc định */
+	.glow-box::before {
+		content: "";
+		@apply absolute -inset-2 rounded-lg -z-10 blur-md;
+		@apply transform-gpu transition-opacity duration-300 ease-in-out;
+		@apply bg-gradient-to-r from-blue-400 via-[#7065ff] to-[#4a3ef7];
+		opacity: 1;
+	}
+	/* LỚP 2: Màu khi Focus */
+	.glow-box::after {
+		content: "";
+		@apply absolute -inset-2 rounded-lg -z-10 blur-md;
+		@apply transform-gpu transition-opacity duration-300 ease-in-out;
+		@apply bg-blue-200;
+		opacity: 0;
 	}
 	.glow-box:focus-within::before {
-		@apply bg-linear-to-r from-blue-200 via-blue-200 to-blue-200;
+		opacity: 0; /* Fade out gradient cũ */
+	}
+	.glow-box:focus-within::after {
+		opacity: 1; /* Fade in màu mới */
 	}
 	.social-icon {
 		@apply p-1 text-3xl md:text-4xl bg-clip-text text-transparent font-bold bg-linear-to-br from-[#efefef] to-[#efefef] transition duration-100 ease-in-out hover:-translate-y-2 hover:scale-125 hover:from-[#8eccff] hover:from-40% hover:to-[#7065ff] will-change-[background-image];
