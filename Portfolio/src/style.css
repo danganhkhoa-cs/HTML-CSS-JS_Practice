@@ -132,6 +132,9 @@
 		@apply p-1 text-3xl md:text-4xl bg-clip-text text-transparent font-bold bg-linear-to-br from-[#efefef] to-[#efefef] transition duration-100 ease-in-out hover:-translate-y-2 hover:scale-125 hover:from-[#8eccff] hover:from-40% hover:to-[#7065ff] will-change-[background-image];
 	}
 	@media (hover: none) {
+		.group\/project:hover .project-name::before {
+			@apply w-0;
+		}
 		.nav-link-mobile:active::before {
 			@apply opacity-100;
 		}
