@@ -14,8 +14,9 @@
 
 	<body class="bg-[#000212]">
 		<header>
-			<div class="fixed top-0 z-50 bg-white/5 backdrop-blur-md w-full h-20">
-				<!--Avatar and navbar-->
+			<div
+				class="group fixed top-0 z-50 bg-white/5 backdrop-blur-md w-full h-fit py-4"
+			>
 				<div id="general-info" class="relative flex h-full items-center w-full">
 					<img
 						src="avatar.webp"
@@ -25,10 +26,8 @@
 					<p class="inline-block font-bold text-[15px] md:text-[18px]">
 						DANG ANH KHOA
 					</p>
-					<button class="navigation-toggle" aria-label="navigation menu toggle">
-						<i class="fa-solid fa-bars text-white"></i>
-					</button>
-					<nav class="hidden sm:block ml-auto mr-4 md:mr-6">
+
+					<nav class="hidden md:block ml-auto mr-4 md:mr-6">
 						<ul class="sm:grid grid-flow-col items-center md:gap-5">
 							<li><a class="nav-link" href="./#hero">HOME</a></li>
 							<li><a class="nav-link" href="./#about-me">ABOUT</a></li>
@@ -36,7 +35,51 @@
 							<li><a class="nav-link" href="./#contact">CONTACT</a></li>
 						</ul>
 					</nav>
+					<!-- Toggle button for navigation mobile menu -->
+					<label
+						for="navigation-toggle"
+						class="md:hidden relative navigation-toggle group/icon inline-flex items-center justify-center w-8 h-8 cursor-pointer"
+						aria-label="navigation menu toggle button"
+						role="button"
+						tabindex="0"
+						aria-controls="navigation-mobile"
+					>
+						<i
+							class="fa-solid fa-bars absolute transition duration-300 ease-in-out opacity-100 group-has-checked/icon:opacity-0 scale-100 group-has-checked/icon:scale-0"
+						></i>
+						<i
+							class="fa-solid fa-xmark absolute transition duration-300 ease-in-out opacity-0 group-has-checked/icon:opacity-100 scale-0 group-has-checked/icon:scale-100"
+						></i>
+
+						<input id="navigation-toggle" type="checkbox" class="hidden" />
+					</label>
 				</div>
+
+				<!-- Navigation menu for mobile -->
+				<nav
+					id="navigation-mobile"
+					class="w-full grid grid-rows-[0fr] opacity-0 transition-all duration-300 ease-in-out group-has-[#navigation-toggle:checked]:grid-rows-[1fr] group-has-[#navigation-toggle:checked]:opacity-100 group-has-[#navigation-toggle:checked]:mt-4 group-has-[#navigation-toggle:checked]:-mb-4 border-t border-transparent group-has-[#navigation-toggle:checked]:border-white/20"
+				>
+					<ul class="overflow-hidden divide-white/20 divide-y">
+						<li>
+							<a class="nav-link-mobile" href="./#hero">HOME</a>
+						</li>
+						<li>
+							<a class="nav-link-mobile" href="./#about-me">ABOUT</a>
+						</li>
+						<li>
+							<a class="nav-link-mobile" href="./#projects">PROJECTS</a>
+						</li>
+						<li>
+							<a class="nav-link-mobile" href="./#contact">CONTACT</a>
+						</li>
+					</ul>
+				</nav>
+
+				<div
+					id="navigation-backdrop"
+					class="absolute hidden inset-0 h-screen -z-10 bg-transparent"
+				></div>
 			</div>
 		</header>
 		<main class="relative overflow-hidden mt-20 p-responsive">
