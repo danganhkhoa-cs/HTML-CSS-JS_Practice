@@ -15,7 +15,9 @@
 		@apply text-[#efefef];
 	}
 	.text-gradient-bold {
-		@apply bg-linear-to-r from-[#8eccff] from-40% to-[#7065ff] bg-clip-text text-transparent font-bold;
+		@apply bg-clip-text;
+		@apply bg-linear-to-r from-[#8eccff] from-40% to-[#7065ff];
+		@apply text-transparent font-bold;
 	}
 	.flex-col-center {
 		@apply flex flex-col justify-center items-center;
@@ -48,36 +50,54 @@
 
 @layer components {
 	.divider {
-		@apply col-span-full h-px md:h-0.5 w-[50vw] bg-linear-to-r m-auto from-transparent via-blue-200 to-transparent;
+		@apply col-span-full;
+		@apply h-px md:h-0.5 w-[50vw];
+		@apply bg-linear-to-r m-auto from-transparent via-blue-200 to-transparent;
 	}
 	.button {
-		@apply relative bg-linear-to-r from-blue-400 via-[#7065ff] to-[#4a3ef7] rounded-md transition duration-200 ease-in-out hover:scale-105 will-change-transform;
+		@apply relative;
+		@apply rounded-md;
+		@apply bg-linear-to-r from-blue-400 via-[#7065ff] to-[#4a3ef7];
+		@apply transition duration-200 ease-in-out hover:scale-105 will-change-transform;
 	}
 	.navigation-toggle {
-		@apply ml-auto mr-4 text-2xl text-white rounded-md p-1 hover:bg-white/5;
+		@apply hover:bg-white/5 ml-auto mr-4 p-1 rounded-md;
+		@apply text-2xl text-white;
 	}
 	.nav-link {
-		@apply relative bg-transparent text-[0.8rem] md:text-[0.9rem] lg:text-[1rem] font-bold tracking-wider py-1 px-4 md:px-6 rounded-md overflow-hidden block;
+		@apply relative block;
+		@apply bg-transparent py-1 px-4 md:px-6 rounded-md overflow-hidden;
+		@apply text-[0.8rem] md:text-[0.9rem] lg:text-[1rem] font-bold tracking-wider;
 	}
 	.nav-link::before {
 		content: "";
-		@apply absolute inset-0 -z-10 bg-linear-to-r from-blue-400/90 via-[#7065ff]/90 to-[#4a3ef7]/90 opacity-0 transition duration-200 ease-in-out;
+		@apply absolute;
+		@apply inset-0 -z-10 opacity-0;
+		@apply bg-linear-to-r from-blue-400/90 via-[#7065ff]/90 to-[#4a3ef7]/90;
+		@apply transition duration-200 ease-in-out;
 	}
 	.nav-link:hover::before {
 		@apply opacity-100;
 	}
 	.nav-link-mobile {
-		@apply relative bg-transparent text-[1rem] text-center font-bold tracking-wider py-5 px-4 overflow-hidden block;
+		@apply relative block;
+		@apply bg-transparent py-5 px-4 overflow-hidden;
+		@apply text-[1rem] text-center font-bold tracking-wider;
 	}
 	.nav-link-mobile::before {
 		content: "";
-		@apply absolute inset-0 -z-10 bg-linear-to-r from-blue-400/90 via-[#7065ff]/90 to-[#4a3ef7]/90 opacity-0;
+		@apply absolute;
+		@apply inset-0 -z-10  opacity-0;
+		@apply bg-linear-to-r from-blue-400/90 via-[#7065ff]/90 to-[#4a3ef7]/90;
 	}
 	.nav-link-mobile:hover::before {
 		@apply opacity-100;
 	}
 	.skill-tag {
-		@apply relative w-fit bg-[#10183a] rounded-md pt-2 pb-2 pl-5 pr-5 border-gray-700 font-bold text-[clamp(16px,2vw,18px)] cursor-default transition duration-200 ease-in-out hover:-translate-y-1 hover:scale-110;
+		@apply relative cursor-default;
+		@apply w-fit bg-[#10183a] rounded-md py-2 px-5 border-gray-700;
+		@apply font-bold text-[clamp(16px,2vw,18px)];
+		@apply transition duration-200 ease-in-out hover:-translate-y-1 hover:scale-110;
 	}
 	.hero-bg {
 		@apply bg-[url('/public/hero_background.webp')] bg-cover bg-center;
@@ -86,10 +106,14 @@
 		@apply bg-[url('/public/contact_background.webp')] bg-cover bg-center;
 	}
 	.hero-blur-layer {
-		@apply absolute inset-0 -z-10 bg-[linear-gradient(to_bottom,#000212_0%,#000212_1%,transparent_10%,transparent_80%,#000212_95%,#000212_100%)];
+		@apply absolute;
+		@apply inset-0 -z-10;
+		@apply bg-[linear-gradient(to_bottom,#000212_0%,#000212_1%,transparent_10%,transparent_80%,#000212_95%,#000212_100%)];
 	}
 	.contact-blur-layer {
-		@apply absolute inset-0 -z-10 bg-[linear-gradient(to_bottom,#000212_0%,#000212_5%,transparent_20%,transparent_90%,#000212_98%,#000212_100%)];
+		@apply absolute;
+		@apply inset-0 -z-10;
+		@apply bg-[linear-gradient(to_bottom,#000212_0%,#000212_5%,transparent_20%,transparent_90%,#000212_98%,#000212_100%)];
 	}
 	.heading-after {
 		@apply w-6 h-1 rounded-md bg-[#c7d3fc];
@@ -98,29 +122,42 @@
 		@apply w-full md:m-0 md:justify-self-end m-auto rounded-md aspect-video object-cover;
 	}
 	.project-name {
-		@apply relative font-bold text-center md:text-left md:w-fit text-2xl xl:text-3xl mt-6 md:mt-0 mb-2 transition duration-200 ease-in-out group-hover/project:text-shadow-[0_0_50px_white] will-change-[color];
+		@apply relative;
+		@apply md:w-fit mt-6 md:mt-0 mb-2;
+		@apply font-bold text-center md:text-left text-2xl xl:text-3xl;
+		@apply transition duration-200 ease-in-out group-hover/project:text-shadow-[0_0_50px_white] will-change-[color];
 	}
 	.project-name::before {
 		content: "";
-		@apply absolute bottom-0 left-0 right-0 m-auto h-0.5 w-0 bg-white transition-[width] duration-200 ease-in-out;
+		@apply absolute;
+		@apply bottom-0 left-0 right-0 m-auto h-0.5 w-0 bg-white;
+		@apply transition-[width] duration-200 ease-in-out;
 	}
 	.group\/project:hover .project-name::before {
 		@apply w-full;
 	}
 	.project-svg {
-		@apply md:hidden size-5 transition duration-200 ease-in-out group-hover/project:-translate-y-0.5 group-hover/project:translate-x-0.5 will-change-transform;
+		@apply md:hidden;
+		@apply size-5;
+		@apply transition duration-200 ease-in-out group-hover/project:-translate-y-0.5 group-hover/project:translate-x-0.5 will-change-transform;
 	}
 	.project-description {
-		@apply text-center md:text-left xl:text-lg m-auto md:m-0 max-w-2xl;
+		@apply m-auto md:m-0 max-w-2xl;
+		@apply text-center md:text-left xl:text-lg;
 	}
 	.project-container {
-		@apply group-hover/all:opacity-40 hover:opacity-100! md:hover:scale-105 p-6 mb-4 md:mb-0 md:grid md:grid-cols-2 md:items-center md:gap-10 md:max-w-[900px] xl:max-w-[1000px] bg-transparent transition duration-200 ease-in-out hover:bg-white/10 md:hover:bg-transparent rounded-[24px] will-change-[background-color];
+		@apply md:grid md:grid-cols-2 md:items-center;
+		@apply p-6 mb-4 md:mb-0 md:gap-10 md:max-w-[900px] xl:max-w-[1000px] rounded-3xl bg-transparent;
+		@apply group-hover/all:opacity-40 hover:opacity-100!;
+		@apply transition duration-200 ease-in-out hover:bg-white/10 md:hover:bg-transparent md:hover:scale-105 will-change-[background-color];
 	}
 	.input-container {
 		@apply pb-6;
 	}
 	.input-field {
-		@apply block w-full p-4 bg-[#000212] rounded-lg mt-2 text-[1rem] focus:outline-0 focus:border-0;
+		@apply block;
+		@apply w-full p-4 bg-[#000212] rounded-lg mt-2;
+		@apply text-[1rem] focus:outline-0 focus:border-0;
 	}
 	.glow-box {
 		@apply relative z-0; /* Tạo stacking context mới */
@@ -148,7 +185,10 @@
 		opacity: 1; /* Fade in màu mới */
 	}
 	.social-icon {
-		@apply p-1 text-3xl md:text-4xl bg-clip-text text-transparent font-bold bg-linear-to-br from-[#efefef] to-[#efefef] transition duration-100 ease-in-out hover:-translate-y-2 hover:scale-125 hover:from-[#8eccff] hover:from-40% hover:to-[#7065ff] will-change-[background-image];
+		@apply p-1;
+		@apply bg-linear-to-br from-[#efefef] to-[#efefef];
+		@apply text-3xl md:text-4xl bg-clip-text text-transparent font-bold;
+		@apply transition duration-100 ease-in-out hover:-translate-y-2 hover:scale-125 hover:from-[#8eccff] hover:from-40% hover:to-[#7065ff] will-change-[background-image];
 	}
 	@media (hover: none) {
 		.group\/project:hover .project-name::before {
