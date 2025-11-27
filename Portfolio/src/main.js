@@ -1,4 +1,5 @@
 import "./style.css";
+import "./theme.js";
 
 const navigationToggle = document.getElementById("navigation-toggle");
 const navigationMobile = document.getElementById("navigation-mobile");

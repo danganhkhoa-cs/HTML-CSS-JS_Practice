@@ -1,7 +1,26 @@
 @import "tailwindcss";
 
 @theme {
+	/* FONT */
 	--font-display: "Roboto", sans-serif;
+
+	/* Main color */
+	--color-background: #000212;
+	--color-text: #efefef;
+
+	/* NAVIGATION BAR */
+	--color-bar: color-mix(in oklab, #fff 5%, transparent);
+}
+
+@layer theme {
+	.dark {
+		/* Main color */
+		--color-background: #fff;
+		--color-text: #383440;
+
+		/* NAVIGATION BAR */
+		--color-bar: color-mix(in oklab, #000 5%, transparent);
+	}
 }
 
 @layer base {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="text-primary font-display scroll-smooth scroll-pt-20">
+<html lang="en" class="text-text font-display scroll-smooth scroll-pt-20">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,11 +12,23 @@
 		/>
 	</head>
 
-	<body class="bg-[#000212]">
+	<body class="bg-background">
 		<header>
 			<div
-				class="group fixed top-0 z-50 bg-white/5 backdrop-blur-md w-full h-fit py-4"
+				class="group fixed top-0 z-50 bg-bar backdrop-blur-md w-full h-fit py-4"
 			>
+				<!-- Toggle theme -->
+				<label
+					for="toggle-theme"
+					class="right-0 top-0 absolute group bg-[#000212] rounded-bl-xl p-1"
+					><input id="toggle-theme" class="hidden" type="checkbox" />
+					<div class="toggle-theme-btn hidden group-has-checked:inline-block">
+						<i class="fa-solid fa-moon"></i>
+					</div>
+					<div class="toggle-theme-btn inline-block group-has-checked:hidden">
+						<i class="fa-solid fa-sun"></i>
+					</div>
+				</label>
 				<div id="general-info" class="relative flex items-center w-full">
 					<img
 						src="avatar.webp"
