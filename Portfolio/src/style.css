@@ -72,8 +72,8 @@
 		--color-heading-after: #2a8af8;
 
 		/* NAVIGATION BAR */
-		--color-bar: color-mix(in oklab, #fff 5%, transparent);
-		--color-nav-link-hover: linear-gradient(to bottom right, #00d0ff, #205fe5);
+		--color-bar: color-mix(in oklab, #fff 50%, transparent);
+		--color-nav-link-hover: linear-gradient(to right, #00000014, #00000014);
 
 		/* HERO SECTION */
 		--color-subtitle: #2a2d2e;
@@ -163,7 +163,7 @@
 	.nav-link {
 		@apply relative block;
 		@apply bg-transparent py-1 px-4 md:px-6 rounded-md overflow-hidden;
-		@apply hover:text-[#efefef] text-[0.8rem] md:text-[0.9rem] lg:text-[1rem] font-bold tracking-wider;
+		@apply text-[0.8rem] md:text-[0.9rem] lg:text-[1rem] font-bold tracking-wider;
 		@apply transition duration-200 ease-in-out;
 	}
 	.nav-link::before {
@@ -179,7 +179,7 @@
 	.nav-link-mobile {
 		@apply relative block;
 		@apply bg-transparent py-5 px-4 overflow-hidden;
-		@apply hover:text-[#efefef] text-[1rem] text-center font-bold tracking-wider;
+		@apply text-[1rem] text-center font-bold tracking-wider;
 		@apply transition-none;
 	}
 	.nav-link-mobile::before {

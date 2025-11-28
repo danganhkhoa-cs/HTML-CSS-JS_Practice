@@ -10,19 +10,12 @@
 			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
 			rel="stylesheet"
 		/>
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-			integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-			crossorigin="anonymous"
-			referrerpolicy="no-referrer"
-		/>
 	</head>
 
 	<body class="bg-background">
 		<header>
 			<div
-				class="group fixed top-0 z-50 bg-bar backdrop-blur-md w-full h-fit py-4"
+				class="group fixed top-0 z-50 bg-bar backdrop-blur-md light:backdrop-blur-xl w-full h-fit py-4"
 			>
 				<div id="general-info" class="relative flex items-center w-full">
 					<img
@@ -36,13 +29,15 @@
 					<!-- Toggle theme -->
 					<label
 						for="toggle-theme"
-						class="relative ml-4 inline-flex items-center justify-center group/theme-icon bg-[#000212]"
+						class="relative ml-4 inline-flex items-center justify-center group/theme-icon text-xl"
+						aria-label="theme toggle button"
+						role="button"
 					>
 						<i
-							class="fa-regular fa-moon cursor-pointer absolute opacity-100 scale-100 group-has-checked/theme-icon:opacity-0 group-has-checked/theme-icon:scale-0"
+							class="bx bx-moon cursor-pointer absolute opacity-100 scale-100 group-has-checked/theme-icon:opacity-0 group-has-checked/theme-icon:scale-0"
 						></i>
 						<i
-							class="fa-regular fa-sun cursor-pointer absolute opacity-0 scale-0 group-has-checked/theme-icon:opacity-100 group-has-checked/theme-icon:scale-100"
+							class="bx bx-sun cursor-pointer absolute opacity-0 scale-0 group-has-checked/theme-icon:opacity-100 group-has-checked/theme-icon:scale-100"
 						></i>
 
 						<input id="toggle-theme" class="hidden" type="checkbox" />
