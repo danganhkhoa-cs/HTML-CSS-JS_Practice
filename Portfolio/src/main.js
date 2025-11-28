@@ -1,3 +1,5 @@
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import "boxicons/css/boxicons.min.css";
 import "./style.css";
 import "./theme.js";
 
