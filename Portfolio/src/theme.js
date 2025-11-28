@@ -1,16 +1,17 @@
 const toggleThemeButton = document.getElementById("toggle-theme");
 
 // Xác định trạng thái dark hiện tại
-const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-const isDark =
-	localStorage.theme === "dark" || (!("theme" in localStorage) && prefersDark);
+const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+const isLight =
+	localStorage.theme === "light" ||
+	(!("theme" in localStorage) && prefersLight);
 
 // Đặt class dark lên html và đồng bộ checkbox
-document.documentElement.classList.toggle("dark", isDark);
-toggleThemeButton.checked = isDark;
+document.documentElement.classList.toggle("light", isLight);
+toggleThemeButton.checked = isLight;
 
 // Lắng nghe khi checkbox thay đổi
 toggleThemeButton.addEventListener("change", () => {
-	document.documentElement.classList.toggle("dark", toggleThemeButton.checked);
-	localStorage.theme = toggleThemeButton.checked ? "dark" : "light";
+	document.documentElement.classList.toggle("light", toggleThemeButton.checked);
+	localStorage.theme = toggleThemeButton.checked ? "light" : "dark";
 });
