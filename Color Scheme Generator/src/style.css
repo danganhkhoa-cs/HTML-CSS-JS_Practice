@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+	--font-jetbrains: "JetBrains Mono", monospace;
+}
+
+@layer components {
+	.input-section {
+		@apply flex items-center justify-evenly;
+		@apply h-[90px];
+	}
+
+	.color-input {
+		@apply w-[51px] h-[42px] cursor-pointer;
+	}
+	.mode-input {
+		@apply flex items-center;
+		@apply w-[400px] px-3 py-1.5 border-2 border-gray-300 rounded-sm;
+	}
+	.get-scheme-btn {
+		@apply w-[180px] px-2 py-1.5 rounded-sm bg-black text-white;
+	}
+
+	.output-section {
+		@apply h-[460px];
+	}
+	.color-div {
+		@apply flex flex-col;
+		@apply h-full;
+	}
+	.color {
+		@apply flex-8;
+	}
+	.color-code {
+		@apply flex-1;
+		@apply flex items-center justify-center;
+		@apply text-[0.9rem] font-medium;
+	}
+}
