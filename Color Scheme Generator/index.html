@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>color-scheme-generator</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body class="font-jetbrains">
+		<main class="bg-black w-screen h-screen flex items-center justify-center">
+			<div class="w-[700px] h-[550px] bg-white">
+				<section class="input-section">
+					<input id="color-input" class="color-input" type="color" />
+					<div id="mode-input" class="mode-input">
+						<p>Some mode</p>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							stroke="currentColor"
+							class="ml-auto size-4"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="m19.5 8.25-7.5 7.5-7.5-7.5"
+							/>
+						</svg>
+					</div>
+					<button id="get-scheme-btn" class="get-scheme-btn">
+						Get color scheme
+					</button>
+				</section>
+				<section class="output-section">
+					<ul class="grid grid-cols-5 h-full w-full">
+						<li>
+							<div class="color-div">
+								<div class="color bg-blue-100"></div>
+								<p class="color-code">#1F236B</p>
+							</div>
+						</li>
+						<li>
+							<div class="color-div">
+								<div class="color bg-blue-200"></div>
+								<p class="color-code">#1F236B</p>
+							</div>
+						</li>
+						<li>
+							<div class="color-div">
+								<div class="color bg-blue-300"></div>
+								<p class="color-code">#1F236B</p>
+							</div>
+						</li>
+						<li>
+							<div class="color-div">
+								<div class="color bg-blue-400"></div>
+								<p class="color-code">#1F236B</p>
+							</div>
+						</li>
+						<li>
+							<div class="color-div">
+								<div class="color bg-blue-500"></div>
+								<p class="color-code">#1F236B</p>
+							</div>
+						</li>
+					</ul>
+				</section>
+			</div>
+		</main>
+		<script type="module" src="/src/main.js"></script>
+	</body>
+</html>
