@@ -2,9 +2,7 @@ const toggleThemeButton = document.getElementById("toggle-theme");
 
 // Xác định trạng thái dark hiện tại
 const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
-const isLight =
-	localStorage.theme === "light" ||
-	(!("theme" in localStorage) && prefersLight);
+const isLight = localStorage.theme === "light" || prefersLight;
 
 // Đặt class dark lên html và đồng bộ checkbox
 document.documentElement.classList.toggle("light", isLight);
