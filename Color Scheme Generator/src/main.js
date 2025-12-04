@@ -1,4 +1,5 @@
 import "./style.css";
+import "./theme.js";
 
 const modeList = [
 	"Monochrome",

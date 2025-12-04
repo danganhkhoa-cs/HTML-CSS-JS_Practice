@@ -2,6 +2,19 @@
 
 @theme {
 	--font-jetbrains: "JetBrains Mono", monospace;
+
+	--color-text: #000;
+	--color-primary: #fff;
+	--color-border: #d1d5dc;
+	--color-li-hover: #f3f4f6;
+}
+
+@layer theme {
+	.dark {
+		--color-text: #d5d4d8;
+		--color-primary: #1f2937;
+		--color-li-hover: #253852;
+	}
 }
 
 @layer components {
@@ -16,17 +29,18 @@
 	}
 	.mode-input {
 		@apply flex items-center relative;
-		@apply w-[400px] px-3 py-1.5 border border-gray-300 rounded-sm;
+		@apply w-[400px] px-3 py-1.5 border border-border rounded-sm;
+		@apply text-text;
 	}
 	.mode-selector {
 		@apply absolute left-0 top-10 flex flex-col;
-		@apply w-full h-fit border border-gray-300 rounded-sm bg-white;
+		@apply w-full h-fit border border-border rounded-sm bg-primary;
 	}
 	ul > li:hover {
-		@apply bg-gray-100;
+		@apply bg-li-hover;
 	}
 	.get-scheme-btn {
-		@apply w-[180px] px-2 py-1.5 rounded-sm bg-black text-white;
+		@apply w-[180px] px-2 py-1.5 rounded-sm bg-text text-primary;
 		@apply cursor-pointer;
 	}
 
@@ -46,6 +60,6 @@
 	.color-code {
 		@apply flex-1;
 		@apply flex items-center justify-center;
-		@apply text-[0.9rem] font-medium;
+		@apply text-text text-[0.9rem] font-medium;
 	}
 }
