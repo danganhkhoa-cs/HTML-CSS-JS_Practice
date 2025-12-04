@@ -27,10 +27,14 @@
 	}
 	.get-scheme-btn {
 		@apply w-[180px] px-2 py-1.5 rounded-sm bg-black text-white;
+		@apply cursor-pointer;
 	}
 
 	.output-section {
 		@apply h-[460px];
+	}
+	.output-list {
+		@apply grid grid-cols-5 h-full w-full;
 	}
 	.color-div {
 		@apply flex flex-col;
