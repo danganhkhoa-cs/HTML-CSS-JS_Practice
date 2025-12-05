@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+@layer components {
+	.header-img {
+		@apply absolute inset-0;
+		@apply w-full h-full;
+		@apply object-cover object-[25%_22%] opacity-20;
+	}
+}
