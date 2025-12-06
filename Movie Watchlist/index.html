@@ -5,13 +5,65 @@
 		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Movie Watchlist</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
-	<body class="bg-black">
-		<main class="fixed inset-0 w-[550px] h-[779px] bg-white m-auto">
-			<div class="relative h-52 w-full bg-black">
+	<body
+		class="bg-black flex items-center justify-center w-screen h-screen font-primary"
+	>
+		<div class="relative w-[550px] h-[779px] bg-white">
+			<div class="header">
 				<img src="header.png" class="header-img" />
+				<h1 class="header-title">Find your film</h1>
+				<button data-watchlist-btn class="watchlist-btn">My Watchlist</button>
+
+				<div class="search-bar">
+					<div class="search-field">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 50 50"
+							fill="currentColor"
+							class="search-icon"
+						>
+							<path
+								fill-rule="evenodd"
+								clip-rule="evenodd"
+								d="M18.75 6.25C11.8464 6.25 6.25 11.8464 6.25 18.75C6.25 25.6536 11.8464 31.25 18.75 31.25C25.6536 31.25 31.25 25.6536 31.25 18.75C31.25 11.8464 25.6536 6.25 18.75 6.25ZM0 18.75C0 8.39466 8.39466 0 18.75 0C29.1053 0 37.5 8.39466 37.5 18.75C37.5 22.7995 36.2163 26.5491 34.0336 29.6142L49.0847 44.6653C50.3051 45.8857 50.3051 47.8643 49.0847 49.0847C47.8643 50.3051 45.8857 50.3051 44.6653 49.0847L29.6142 34.0336C26.5491 36.2163 22.7995 37.5 18.75 37.5C8.39466 37.5 0 29.1053 0 18.75Z"
+							/>
+						</svg>
+						<input
+							data-search-input
+							class="search-input"
+							type="text"
+							placeholder="Search for a movie"
+						/>
+					</div>
+					<button data-search-btn class="search-btn">Search</button>
+				</div>
 			</div>
-		</main>
+			<div class="main">
+				<div class="empty-placeholder">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="70"
+						height="62"
+						viewBox="0 0 70 62"
+						fill="currentColor"
+					>
+						<path
+							fill-rule="evenodd"
+							clip-rule="evenodd"
+							d="M8.75 0C3.91751 0 0 3.9175 0 8.75V52.5C0 57.3325 3.91751 61.25 8.75 61.25H61.25C66.0825 61.25 70 57.3325 70 52.5V8.75C70 3.9175 66.0825 0 61.25 0H8.75ZM21.875 8.75H48.125V26.25H21.875V8.75ZM56.875 43.75V52.5H61.25V43.75H56.875ZM48.125 35H21.875V52.5H48.125V35ZM56.875 35H61.25V26.25H56.875V35ZM61.25 17.5V8.75H56.875V17.5H61.25ZM13.125 8.75V17.5H8.75V8.75H13.125ZM13.125 26.25H8.75V35H13.125V26.25ZM8.75 43.75H13.125V52.5H8.75V43.75Z"
+						/>
+					</svg>
+					<p>Start exploring</p>
+				</div>
+			</div>
+		</div>
 		<script type="module" src="/src/main.js"></script>
 	</body>
 </html>
