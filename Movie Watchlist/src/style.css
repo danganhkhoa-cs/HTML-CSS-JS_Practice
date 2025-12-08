@@ -59,7 +59,7 @@
 		@apply h-[571px] mt-52;
 		@apply z-0;
 	}
-	.empty-placeholder {
+	.status {
 		@apply absolute inset-0;
 		@apply flex flex-col items-center justify-center;
 		@apply m-auto;
@@ -67,26 +67,31 @@
 		@apply -z-10;
 	}
 	.film-container {
-		@apply grid grid-cols-[auto_1fr] gap-6;
-		@apply mt-16 px-11;
+		@apply grid grid-cols-[auto_1fr] gap-6 items-center;
+		@apply my-16 pl-11 pr-13;
 	}
 	.film-poster {
 		@apply object-cover rounded-sm;
 		@apply w-[100px] h-[150px];
 	}
 	.film-info {
-		@apply grid grid-cols-10 items-center;
+		@apply flex flex-col justify-between;
+	}
+	.film-title-rating {
+		@apply flex items-center gap-2;
 	}
 	.film-title {
-		@apply col-span-4;
-		@apply text-xl font-medium;
+		@apply max-w-60 overflow-hidden;
+		@apply text-xl font-medium text-ellipsis text-nowrap;
 	}
 	.film-rating {
-		@apply col-span-6;
 		@apply text-xs;
 	}
 	.film-rating-icon {
 		@apply text-[#FEC654];
+	}
+	.film-runtime-genre-watchlist {
+		@apply flex items-center justify-between;
 	}
 	.film-runtime {
 		@apply col-span-2;
@@ -94,12 +99,12 @@
 	}
 	.film-genre {
 		@apply col-span-4;
-		@apply text-xs;
+		@apply text-xs text-center;
 	}
 	.add-watchlist-btn {
 		@apply col-span-4;
 		@apply flex items-center gap-1;
-		@apply w-fit ml-3 px-2.5 py-1.5 rounded-md hover:bg-gray-100;
+		@apply w-fit px-2.5 py-1.5 rounded-md hover:bg-gray-100;
 		@apply text-xs;
 		@apply transition ease-in-out;
 		@apply cursor-pointer;
@@ -111,24 +116,4 @@
 		@apply col-span-full;
 		@apply text-[0.875rem] text-[#6B7280];
 	}
-
-	/* 
-<ul>
-	<li>
-		<div class="film-container">
-			<img class="film-poster" />
-			<div class="film-info">
-				<p class="film-title"></p>
-				<p class="film-rating">
-					<span class="film-rating-icon"></span>
-				</p>
-				<p class="film-runtime"></p>
-				<p class="film-genre"></p>
-				<button class="add-watchlist-btn"></button>
-				<p class="plot"></p>
-			</div>
-		</div>
-	</li>
-</ul>
-*/
 }
