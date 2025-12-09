@@ -20,6 +20,14 @@ const getFilmIDList = async (searchText) => {
 
 		const data = await res.json();
 		if (data.Response === "False") {
+			statusElement.style.display = "";
+			if (data.Error === "Too many results.") {
+				statusElement.innerHTML = "Please enter more specific film's name";
+			} else if (data.Error === "Movie not found!") {
+				statusElement.innerHTML =
+					"Cannot find the movie, please try another name";
+			}
+			return [];
 		}
 
 		return data.Search.map((film) => film.imdbID);
@@ -39,8 +47,6 @@ const getFilmInfo = async (filmID) => {
 		}
 
 		const data = await res.json();
-		if (data.Response === "False") {
-		}
 		return data;
 	} catch {
 		console.error("Error fetching film:", error);
@@ -55,9 +61,12 @@ const renderFilms = async () => {
 		return;
 	}
 
-	statusElement.style.display = "none";
-
 	filmIDList = await getFilmIDList(searchText);
+
+	if (filmIDList.length === 0) {
+		return;
+	}
+	statusElement.style.display = "none";
 
 	const htmlArray = await Promise.all(
 		filmIDList.map(async (id) => {
