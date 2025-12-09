@@ -21,13 +21,13 @@
 	.header-title {
 		@apply text-[2.5rem] font-extrabold tracking-wide;
 	}
+	.home-btn,
 	.watchlist-btn {
 		@apply px-2 py-1 rounded-sm hover:bg-gray-500/30;
 		@apply font-medium;
 		@apply transition ease-in-out;
 		@apply cursor-pointer;
 	}
-
 	.search-bar {
 		@apply absolute -bottom-4;
 		@apply flex;
@@ -66,9 +66,14 @@
 		@apply text-gray-300;
 		@apply -z-10;
 	}
+	.film-list {
+		@apply w-full my-16 px-12;
+	}
+	.film-list li {
+		@apply not-last:border-b not-last:border-gray-300 not-last:pb-5 not-first:pt-5;
+	}
 	.film-container {
 		@apply grid grid-cols-[auto_1fr] gap-6 items-center;
-		@apply my-16 pl-11 pr-13;
 	}
 	.film-poster {
 		@apply object-cover rounded-sm;
@@ -101,15 +106,17 @@
 		@apply col-span-4;
 		@apply text-xs text-center;
 	}
-	.add-watchlist-btn {
+	.add-watchlist-btn,
+	.remove-watchlist-btn {
 		@apply col-span-4;
 		@apply flex items-center gap-1;
-		@apply w-fit px-2.5 py-1.5 rounded-md hover:bg-gray-100;
+		@apply w-fit px-2.5 py-1.5 rounded-md hover:bg-gray-100 disabled:invisible;
 		@apply text-xs;
 		@apply transition ease-in-out;
 		@apply cursor-pointer;
 	}
-	.add-watchlist-btn-icon {
+	.add-watchlist-btn-icon,
+	.remove-watchlist-btn-icon {
 		@apply size-4;
 	}
 	.film-plot {
