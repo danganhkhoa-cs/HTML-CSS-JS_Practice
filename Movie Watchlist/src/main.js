@@ -1,4 +1,5 @@
 import "./style.css";
+import "./theme.js";
 
 let filmIDList = [];
 let filmIDWatchlist = JSON.parse(localStorage.getItem("watchlist") || "[]");
@@ -17,6 +18,15 @@ const statusElement = document.querySelector("[data-status]");
 const statusWatchlistElement = document.querySelector(
 	"[data-status-watchlist]"
 );
+const loadingOverlay = document.querySelector("[data-loading-overlay]");
+
+const showLoading = () => {
+	loadingOverlay.classList.remove("hidden");
+};
+
+const hideLoading = () => {
+	loadingOverlay.classList.add("hidden");
+};
 
 const getFilmIDList = async (searchText) => {
 	searchText = searchText.trim().toLowerCase();
@@ -68,6 +78,7 @@ const getFilmInfo = async (filmID) => {
 };
 
 const renderFilms = async () => {
+	showLoading();
 	const searchText = searchInput.value;
 
 	statusElement.style.display = "none";
@@ -76,6 +87,8 @@ const renderFilms = async () => {
 	searchButton.disabled = false;
 
 	if (filmIDList.length === 0) {
+		statusElement.style.display = "";
+		hideLoading();
 		return;
 	}
 
@@ -127,6 +140,7 @@ const renderFilms = async () => {
 		})
 	);
 	filmListElement.innerHTML = htmlArray.join("");
+	hideLoading();
 };
 const renderWatchlist = async () => {
 	if (filmIDWatchlist.length === 0) {
@@ -134,6 +148,7 @@ const renderWatchlist = async () => {
 		return;
 	}
 	statusWatchlistElement.style.display = "none";
+	showLoading();
 
 	const htmlArray = await Promise.all(
 		filmIDWatchlist.map(async (id) => {
@@ -182,6 +197,7 @@ const renderWatchlist = async () => {
 		})
 	);
 	filmWatchlistElement.innerHTML = htmlArray.join("");
+	hideLoading();
 };
 
 searchButton.addEventListener("click", renderFilms);
@@ -211,6 +227,14 @@ filmWatchlistElement.addEventListener("click", (e) => {
 		localStorage.setItem("watchlist", JSON.stringify(filmIDWatchlist));
 
 		e.target.closest("li").remove();
+		// Enable lại nút thêm vào watchlist cho bộ phim đó
+		document.querySelector(
+			`.add-watchlist-btn[data-id="${removeWatchlistButton.dataset.id}"]`
+		).disabled = false;
+
+		if (filmIDWatchlist.length === 0) {
+			statusWatchlistElement.style.display = "";
+		}
 	}
 });
 
@@ -222,10 +246,8 @@ watchlistButton.addEventListener("click", () => {
 homeButton.addEventListener("click", () => {
 	homePage.classList.remove("hidden");
 	watchlistPage.classList.add("hidden");
-	renderFilms();
 });
 homeButton2.addEventListener("click", () => {
 	homePage.classList.remove("hidden");
 	watchlistPage.classList.add("hidden");
-	renderFilms();
 });

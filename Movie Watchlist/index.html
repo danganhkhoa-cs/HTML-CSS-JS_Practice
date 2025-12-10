@@ -20,10 +20,48 @@
 		/>
 	</head>
 	<body
-		class="bg-black flex items-center justify-center w-screen h-screen font-primary"
+		class="relative text-text bg-black flex items-center justify-center w-screen h-screen font-primary"
 	>
+		<!-- Loading Overlay -->
+		<div data-loading-overlay class="loading-overlay hidden">
+			<div class="loading-spinner"></div>
+		</div>
+		<!-- Toggle theme button -->
+		<label
+			class="group text-white absolute w-fit left-0 right-0 top-12 mx-auto"
+		>
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				fill="none"
+				viewBox="0 0 24 24"
+				stroke-width="1.5"
+				stroke="currentColor"
+				class="size-6 group-has-checked:hidden"
+			>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+				/>
+			</svg>
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				fill="none"
+				viewBox="0 0 24 24"
+				stroke-width="1.5"
+				stroke="currentColor"
+				class="size-5 hidden group-has-checked:block"
+			>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"
+				/>
+			</svg>
+			<input data-toggle-theme-btn class="appearance-none" type="checkbox" />
+		</label>
 		<!-- Home page -->
-		<div data-home-page class="relative w-[550px] h-[779px] bg-white">
+		<div data-home-page class="relative w-[550px] h-[779px] bg-page">
 			<div class="header">
 				<img src="header.png" class="header-img" />
 				<h1 class="header-title">Find your film</h1>
@@ -80,7 +118,7 @@
 		<!-- Watchlist page -->
 		<div
 			data-watchlist-page
-			class="hidden relative w-[550px] h-[779px] bg-white"
+			class="hidden relative w-[550px] h-[779px] bg-page"
 		>
 			<div class="header">
 				<img src="header.png" class="header-img" />
@@ -90,7 +128,10 @@
 			<div class="main">
 				<div data-status-watchlist class="status font-bold">
 					<p>Your watchlist is looking a little bit empty...</p>
-					<button data-home-btn-2 class="add-watchlist-btn text-black mt-2">
+					<button
+						data-home-btn-2
+						class="add-watchlist-btn mt-2 text-home-btn-2-text"
+					>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 50 50"
