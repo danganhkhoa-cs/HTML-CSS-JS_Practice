@@ -1,6 +1,9 @@
-function roundTo(number, decimal) {
-	const factor = Math.pow(10, decimal);
-	return Math.round(number * factor) / factor;
+import { roundTo } from "../utils/roundTo.js";
+
+let price = 500;
+
+export function getCurrentPrice() {
+	return price;
 }
 
 export async function handlePrice(req, res) {
@@ -12,7 +15,6 @@ export async function handlePrice(req, res) {
 
 	const min = 500;
 	const max = 10000;
-	let price = 0;
 	const intervalId = setInterval(() => {
 		const sign = Math.random() < 0.5 ? -1 : 1;
 		const step = sign * (Math.random() * 500);

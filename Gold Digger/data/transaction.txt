@@ -1,0 +1,7 @@
+
+2025-12-19T03:00:16.379Z, amout paid: £1000, price per Oz: £3871.57366, gold sold: 0.2583 Oz
+2025-12-19T03:00:19.636Z, amout paid: £1000, price per Oz: £3605.40826, gold sold: 0.2774 Oz
+2025-12-19T03:00:21.838Z, amout paid: £1000, price per Oz: £2806.986, gold sold: 0.3563 Oz
+2025-12-19T03:00:23.728Z, amout paid: £1000, price per Oz: £3313.45376, gold sold: 0.3018 Oz
+2025-12-19T03:00:26.782Z, amout paid: £1000, price per Oz: £4174.68934, gold sold: 0.2395 Oz
+2025-12-19T03:00:28.820Z, amout paid: £1000, price per Oz: £4113.17019, gold sold: 0.2431 Oz
