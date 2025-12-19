@@ -6,5 +6,5 @@ export function getContentType(extension) {
 		".json": "application/json",
 		".png": "image/png",
 	};
-	return typeOf[extension];
+	return typeOf[extension] || "text/plain";
 }

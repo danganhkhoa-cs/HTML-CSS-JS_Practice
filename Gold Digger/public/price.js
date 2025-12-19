@@ -1,6 +1,6 @@
 const eventSource = new EventSource("/");
 const priceDisplay = document.getElementById("price-display");
-priceDisplay.textContent = "500";
+priceDisplay.textContent = 500;
 
 eventSource.onmessage = (event) => {
 	const data = JSON.parse(event.data);
