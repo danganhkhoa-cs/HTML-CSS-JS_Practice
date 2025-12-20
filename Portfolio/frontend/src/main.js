@@ -81,6 +81,8 @@ const loadProjects = async () => {
 	hidePlaceholders();
 	renderProjects(projects);
 
+	// Place holder need w-full while real content need w-fit
+	projectList.style.width = "fit-content";
 	projectList.classList.remove("loading");
 };
 loadProjects();
