@@ -13,6 +13,12 @@
 	--color-button: linear-gradient(to right, #51a2ff, #7065ff, #4a3ef7);
 	--color-heading: linear-gradient(to right, #8eccff, #7065ff);
 	--color-heading-after: #efefef;
+	--color-skeleton: linear-gradient(
+		to right,
+		#1a1c2e 25%,
+		#24274a 37%,
+		#1a1c2e 63%
+	);
 
 	/* NAVIGATION BAR */
 	--color-bar: color-mix(in oklab, #fff 5%, transparent);
@@ -70,6 +76,12 @@
 		--color-button: linear-gradient(to bottom right, #00d2ff, #205fe5);
 		--color-heading: linear-gradient(to right, #111111, #111111);
 		--color-heading-after: #2a8af8;
+		--color-skeleton: linear-gradient(
+			to right,
+			#e5e5e5 25%,
+			#f0f0f0 37%,
+			#e5e5e5 63%
+		);
 
 		/* NAVIGATION BAR */
 		--color-bar: color-mix(in oklab, #fff 50%, transparent);
@@ -141,6 +153,8 @@
 	.bg-border-gradient:focus-within {
 		background: var(--color-form) padding-box,
 			var(--color-form-border-focus) border-box;
+	}
+	.loading-animation {
 	}
 }
 
@@ -218,8 +232,27 @@
 	.heading-after {
 		@apply w-6 h-1 rounded-md bg-heading-after;
 	}
+
+	/* Projects */
+	.project-list {
+		@apply grid grid-cols-1;
+		@apply w-full mt-5;
+	}
+	.project-container {
+		@apply md:grid md:grid-cols-2 md:items-center;
+		@apply mx-auto p-6 mb-4 md:mb-0 md:gap-10 md:max-w-[900px] xl:max-w-[1000px] rounded-3xl bg-transparent;
+		@apply group-hover/all:opacity-40 hover:opacity-100!;
+		@apply transition duration-200 ease-in-out hover:bg-white/10 md:hover:bg-transparent md:hover:scale-105 will-change-[background-color];
+	}
+	.project-img-wrapper {
+		@apply relative;
+		@apply w-full aspect-video;
+	}
 	.project-img {
-		@apply w-full md:m-0 md:justify-self-end m-auto rounded-md aspect-video object-cover;
+		@apply absolute inset-0;
+		@apply md:justify-self-end;
+		@apply w-full md:m-0 m-auto rounded-md;
+		@apply aspect-video object-cover;
 	}
 	.project-name {
 		@apply relative;
@@ -245,12 +278,34 @@
 		@apply m-auto md:m-0 max-w-2xl;
 		@apply text-center md:text-left xl:text-lg;
 	}
-	.project-container {
-		@apply md:grid md:grid-cols-2 md:items-center;
-		@apply p-6 mb-4 md:mb-0 md:gap-10 md:max-w-[900px] xl:max-w-[1000px] rounded-3xl bg-transparent;
-		@apply group-hover/all:opacity-40 hover:opacity-100!;
-		@apply transition duration-200 ease-in-out hover:bg-white/10 md:hover:bg-transparent md:hover:scale-105 will-change-[background-color];
+	/* Projects loading */
+	.loading .project-img-wrapper {
+		@apply bg-(image:--color-skeleton) bg-size-[400%_100%] rounded-md;
+		@apply animate-[shimmer_1.3s_ease-in-out_infinite];
 	}
+	.loading .project-img {
+		@apply opacity-0;
+	}
+	.loading .project-name {
+		@apply bg-(image:--color-skeleton) bg-size-[400%_100%] w-full! h-[1.2em]! rounded;
+		@apply animate-[shimmer_1.3s_ease-in-out_infinite];
+	}
+	.loading .project-name::before {
+		@apply opacity-0;
+	}
+	.loading .project-description {
+		@apply bg-(image:--color-skeleton) bg-size-[400%_100%] w-full! min-h-30! rounded;
+		@apply animate-[shimmer_1.3s_ease-in-out_infinite];
+	}
+	@keyframes shimmer {
+		0% {
+			background-position: 100% 0;
+		}
+		100% {
+			background-position: 0 0;
+		}
+	}
+
 	.input-container {
 		@apply pb-6;
 	}

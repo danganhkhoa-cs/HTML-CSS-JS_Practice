@@ -1,0 +1,30 @@
+[
+  {
+    "name": "GitHub Profile Viewer",
+    "description": "A simple web project that displays GitHub user information using public APIs. Focuses on clean UI and basic API handling.",
+    "href": "https://github.com",
+    "image": "/placeholder.webp",
+    "alt": "Project 1 description"
+  },
+  {
+    "name": "Social Media Landing Page",
+    "description": "A responsive landing page concept inspired by social media platforms, built to practice layout, spacing, and hover effects.",
+    "href": "https://www.facebook.com",
+    "image": "/placeholder.webp",
+    "alt": "Project 2 description"
+  },
+  {
+    "name": "Search UI Experiment",
+    "description": "An experimental interface that mimics search behavior, focusing on accessibility, input handling, and minimalist design.",
+    "href": "https://www.google.com",
+    "image": "/placeholder.webp",
+    "alt": "Project 3 description"
+  },
+  {
+    "name": "Video Gallery Showcase",
+    "description": "A gallery-style project showcasing video thumbnails and metadata, designed to practice grid layouts and component reuse.",
+    "href": "https://www.youtube.com",
+    "image": "/placeholder.webp",
+    "alt": "Project 4 description"
+  }
+]

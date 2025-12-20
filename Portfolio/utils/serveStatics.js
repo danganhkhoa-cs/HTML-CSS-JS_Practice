@@ -10,7 +10,6 @@ export async function serveStatics(req, res, baseDir) {
 
 	try {
 		const content = await fs.readFile(filePath);
-		console.log(getContentType(filePath));
 		sendResponse(res, 200, getContentType(filePath), content);
 	} catch (e) {
 		if (e.code === "ENOENT") {
