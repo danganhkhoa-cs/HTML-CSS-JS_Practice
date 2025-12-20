@@ -236,7 +236,7 @@
 	/* Projects */
 	.project-list {
 		@apply grid grid-cols-1;
-		@apply w-full mt-5;
+		@apply w-full mt-5 m-auto;
 	}
 	.project-container {
 		@apply md:grid md:grid-cols-2 md:items-center;
