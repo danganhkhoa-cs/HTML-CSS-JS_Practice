@@ -75,7 +75,7 @@ const hidePlaceholders = () => {
 const loadProjects = async () => {
 	projectList.classList.add("loading");
 
-	const res = await fetch("/data/projects");
+	const res = await fetch("/api/projects");
 	const projects = await res.json();
 
 	hidePlaceholders();
