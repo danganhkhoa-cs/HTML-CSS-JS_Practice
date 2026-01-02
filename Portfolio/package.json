@@ -11,6 +11,7 @@
     "dev": "node --watch server.js"
   },
   "dependencies": {
-    "mime-types": "^3.0.2"
+    "cors": "^2.8.5",
+    "express": "^5.2.1"
   }
 }
