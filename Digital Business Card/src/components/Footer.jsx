@@ -1,5 +1,5 @@
 export const Footer = () => (
-	<div className="flex items-center justify-center gap-4 bg-[#D5D4D8] w-79.25 h-16 ">
+	<div className="flex items-center justify-center gap-4 bg-footer w-79.25 h-16 ">
 		<a className="social-icon">
 			<i class="fa-brands fa-square-twitter"></i>
 		</a>

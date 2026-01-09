@@ -8,11 +8,11 @@ export const Header = () => (
 			<h2 className="job">Fullstack Developer</h2>
 			<a className="weblink">kisaragiyuzuki.website</a>
 			<div className="flex items-center justify-between mt-4 w-full">
-				<a className="profile-btn text-gray-700 border border-gray-300">
+				<a className="profile-btn bg-white text-gray-700 border border-gray-300">
 					<i class="fa-solid fa-envelope text-[0.9em]"></i>
 					Email
 				</a>
-				<a className="profile-btn bg-[#297FE5] text-white">
+				<a className="profile-btn bg-linkedin text-white">
 					<i class="fa-brands fa-linkedin text-[0.9em]"></i>
 					LinkedIn
 				</a>
