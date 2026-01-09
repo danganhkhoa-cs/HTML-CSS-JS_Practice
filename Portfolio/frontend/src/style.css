@@ -69,6 +69,7 @@
 
 @layer theme {
 	.light {
+		--font-display: "Roboto", sans-serif;
 		/* Main color */
 		--color-background: #fefefe;
 		--color-project-background: #fafafa;
@@ -85,7 +86,7 @@
 
 		/* NAVIGATION BAR */
 		--color-bar: color-mix(in oklab, #fff 50%, transparent);
-		--color-nav-link-hover: linear-gradient(to right, #00000014, #00000014);
+		--color-nav-link-hover: linear-gradient(to right, #0000000f, #0000000f);
 
 		/* HERO SECTION */
 		--color-subtitle: #2a2d2e;
