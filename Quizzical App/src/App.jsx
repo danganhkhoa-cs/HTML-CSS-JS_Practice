@@ -7,7 +7,7 @@ import { preProcess } from "./utils/preProcess";
 
 function App() {
 	const [isStartQuiz, setisStartQuiz] = useState(false);
-	const { data } = useQuery({
+	const { data, refetch } = useQuery({
 		queryKey: ["questions"],
 		queryFn: fetchQuestions,
 		retry: true,
@@ -23,7 +23,10 @@ function App() {
 				/>
 			)}
 			{isStartQuiz && data && (
-				<Questions questions={preProcess(data.results)} />
+				<Questions
+					questions={preProcess(data.results)}
+					refetchQuestions={refetch}
+				/>
 			)}
 		</div>
 	);
