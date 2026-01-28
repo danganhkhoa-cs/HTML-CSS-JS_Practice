@@ -1,1 +1,59 @@
 @import "tailwindcss";
+
+#root {
+	font-family: "Inter", sans-serif;
+}
+
+@layer components {
+	.global-layout {
+		@apply flex flex-col gap-16;
+		@apply bg-[#e5e7eb] w-screen min-h-screen p-10;
+	}
+	.section-heading {
+		@apply mb-1;
+		@apply font-[Permanent_Marker] text-3xl;
+	}
+	.component-field {
+		@apply flex items-center justify-center;
+		@apply bg-[#2c2c2c] rounded-md p-5 mt-3;
+	}
+
+	.badge {
+		@apply w-fit py-0.5 px-3;
+		@apply font-medium;
+		@apply transition-all;
+	}
+
+	.banner-container {
+		@apply flex gap-2;
+		@apply py-2 px-3 rounded-md;
+		@apply transition-all;
+	}
+	.banner-title {
+		@apply font-medium;
+	}
+
+	.toast-container {
+		@apply flex gap-2;
+		@apply px-3 py-4 rounded-lg;
+		@apply transition-all;
+	}
+	.toast-title {
+		@apply font-medium;
+	}
+
+	.tooltip-container {
+		@apply relative;
+		@apply grid grid-cols-[auto_300px_auto] gap-4;
+		@apply p-5 rounded-lg;
+		box-shadow:
+			0px 4px 6px -2px rgba(0, 0, 0, 0.1),
+			0px 10px 15px -3px rgba(0, 0, 0, 0.15);
+	}
+	.tooltip-container::before {
+		content: "";
+		@apply absolute left-1/8 -bottom-2;
+		@apply w-5 h-5 bg-inherit;
+		@apply rotate-45;
+	}
+}
