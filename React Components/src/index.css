@@ -56,4 +56,86 @@
 		@apply w-5 h-5 bg-inherit;
 		@apply rotate-45;
 	}
+
+	.testimonial-container {
+		@apply relative;
+		@apply max-w-200 h-fit pl-62 pr-10 py-8 bg-[rgba(37,69,184,1)] rounded-md;
+		@container (max-width: 40rem) {
+			@apply min-w-47 w-47;
+			@apply px-3 pt-16 pb-8;
+		}
+	}
+	.testimonial-img-container {
+		@apply absolute left-10 top-1/2 -translate-y-1/2;
+		@apply w-[192px] h-[232px] rounded-lg overflow-hidden;
+		@apply transition-all;
+		@container (max-width: 40rem) {
+			@apply left-1/2 top-0 -translate-x-1/2;
+			@apply w-[172px] h-[103px];
+		}
+	}
+	.testimonial-img {
+		@apply w-full h-full object-cover;
+	}
+	.testimonial-content {
+		@apply flex flex-col justify-center gap-3;
+		@apply h-fit;
+	}
+	.testimonial-desc {
+		@apply text-white font-medium text-[0.9em];
+	}
+	.testimonial-name {
+		@apply text-white font-bold text-[0.6em];
+	}
+	.testimonial-role {
+		@apply text-white font-medium text-[0.6em];
+	}
+
+	.testimonial-container-noimg {
+		@apply relative z-0;
+		@apply flex flex-col items-center justify-center gap-3;
+		@apply px-36 py-9 bg-white rounded-md;
+		@apply overflow-hidden;
+		@container (max-width: 40rem) {
+			@apply min-w-47 w-47;
+			@apply px-3;
+		}
+	}
+	.testimonial-container-noimg .testimonial-desc {
+		@apply text-[rgba(17,24,39,1)] text-center @max-[40rem]:text-left;
+	}
+	.testimonial-container-noimg .testimonial-meta-data {
+		@apply flex items-center gap-2;
+		@container (max-width: 40rem) {
+			@apply self-start;
+			@apply flex-col items-start gap-0;
+		}
+	}
+	.testimonial-container-noimg .testimonial-name {
+		@apply text-[rgba(17,24,39,1)] font-medium;
+	}
+	.testimonial-container-noimg .testimonial-role {
+		@apply text-[rgba(107,114,128,1)];
+	}
+
+	.card-container {
+		@apply relative;
+		@apply w-[384px] h-[208px] bg-[rgba(249,250,251,1)] rounded-lg pt-6 pb-2 px-10;
+		@apply hover:shadow-[0px_4px_25px_0px_#0000001A] hover:-translate-y-1;
+		@apply transition-all duration-300;
+	}
+	.logo-container {
+		@apply absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2;
+		@apply flex items-center justify-center;
+		@apply bg-[rgba(63,117,254,1)] w-12 h-12 rounded-lg;
+		box-shadow:
+			0px 4px 6px -2px #0000000d,
+			0px 10px 15px -3px #0000001a;
+	}
+	.card-title {
+		@apply text-xl text-[rgba(17,24,39,1)] font-medium;
+	}
+	.card-desc {
+		@apply text-[rgba(107,114,128,1)] text-center;
+	}
 }
